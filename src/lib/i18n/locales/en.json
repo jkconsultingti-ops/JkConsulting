@@ -1,0 +1,318 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "cases": "Case Studies",
+    "blog": "Blog",
+    "contact": "Contact",
+    "login": "Login",
+    "portal": "Portal"
+  },
+  "home": {
+    "hero": {
+      "headline": "Automate manual work. Focus on what matters.",
+      "subheadline": "JK Consulting implements AI and automation for small businesses that can't afford to waste time on repetitive processes.",
+      "cta_primary": "Schedule a Free Call",
+      "cta_secondary": "View Services"
+    },
+    "problem": {
+      "title": "Are you losing time on tasks that could be automated?",
+      "text": "Small businesses spend hours on repetitive, low-value manual work. Spreadsheets that don't talk to each other. Emails that go unanswered. Data scattered everywhere. You know there's a solution — but don't know where to start."
+    },
+    "how": {
+      "title": "How we help"
+    },
+    "why": {
+      "title": "Why JK Consulting",
+      "items": [
+        { "title": "Done-for-you implementation", "desc": "We don't deliver slide decks. We go live and make sure it works." },
+        { "title": "Zero technical jargon", "desc": "We speak business language, not IT. You understand every step." },
+        { "title": "Small business focus", "desc": "We're not a large consultancy. We're the right partner for growing businesses." },
+        { "title": "Measurable results", "desc": "We set clear goals upfront. You measure the impact on your bottom line." }
+      ]
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "placeholder": "Testimonials coming soon"
+    },
+    "cases_preview": {
+      "title": "Real results",
+      "placeholder": "Case studies coming soon",
+      "cta": "View all cases"
+    },
+    "final_cta": {
+      "title": "Ready to stop wasting time?",
+      "cta": "Schedule a Free Call"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Practical AI and automation solutions for small businesses",
+    "learn_more": "Learn more",
+    "cta": "Schedule a Discovery Call",
+    "problem": "Problem it solves",
+    "delivers": "What we deliver",
+    "for_whom": "Who it's for",
+    "result": "Expected result",
+    "list": {
+      "automacao-ia": {
+        "name": "AI Process Automation",
+        "short": "Identify and eliminate manual tasks with AI-powered automated workflows.",
+        "hero": "Stop doing manually what AI can do for you",
+        "problem": "Your team spends hours on repetitive tasks: answering emails, entering data, copying information between systems. This costs money and energy that should go toward growth.",
+        "delivers": [
+          "Automatic email responses and follow-ups",
+          "AI-powered data entry and document processing",
+          "Workflow triggers between tools (CRM → invoice → notification)",
+          "AI chatbots for client triage or FAQ handling",
+          "Lead qualification automation"
+        ],
+        "for_whom": "For small businesses with repetitive processes consuming team time.",
+        "result": "Fewer manual hours per week. Fewer errors. Team focused on strategic work."
+      },
+      "consultoria-crm": {
+        "name": "CRM Consulting & Implementation",
+        "short": "The right CRM, configured and running — with your team actually using it.",
+        "hero": "A CRM your team actually uses",
+        "problem": "Many companies have a CRM, but it became a data graveyard. Nobody uses it. Nothing gets updated. The sales funnel visibility is zero.",
+        "delivers": [
+          "CRM platform selection (HubSpot, Zoho, Pipedrive and others)",
+          "Full CRM setup and data migration",
+          "Custom pipelines for sales, customer service or operations",
+          "Automatic follow-up sequences",
+          "Reporting dashboards",
+          "Team training and adoption support"
+        ],
+        "for_whom": "For companies that have lost leads due to lack of follow-up or never had a structured sales process.",
+        "result": "Organized sales team, automatic follow-ups and full funnel visibility."
+      },
+      "otimizacao-processos": {
+        "name": "Process Optimization & Efficiency",
+        "short": "We map your bottlenecks and redesign workflows to free up your team.",
+        "hero": "Less waste. More results.",
+        "problem": "Every business has bottlenecks. Slow steps, approvals that get stuck, information that gets lost. The problem is that when you're inside it, it's hard to see.",
+        "delivers": [
+          "Business process mapping and documentation",
+          "Bottleneck analysis",
+          "SOP creation (standard operating procedures)",
+          "Tool consolidation recommendations",
+          "Time savings report (before vs. after)"
+        ],
+        "for_whom": "For businesses that feel they work a lot but results don't match the effort.",
+        "result": "Documented processes, eliminated bottlenecks and team investing time in high-value activities."
+      },
+      "analytics-dados": {
+        "name": "Analytics & Data Reporting",
+        "short": "Dashboards your team actually uses — without a data team.",
+        "hero": "Make decisions with data, not guesswork",
+        "problem": "You have data scattered in spreadsheets, CRMs and systems. But when making a decision, everything becomes intuition because nobody has time to consolidate anything.",
+        "delivers": [
+          "KPI identification and dashboard creation",
+          "Google Sheets / Looker Studio / Power BI setup",
+          "Automated weekly/monthly reports",
+          "Sales funnel analysis",
+          "Customer behavior insights"
+        ],
+        "for_whom": "For managers who need business visibility without depending on a data analyst.",
+        "result": "Automatically updated dashboard, meetings with data on hand and faster decisions."
+      },
+      "transformacao-digital": {
+        "name": "Digital Transformation Strategy",
+        "short": "From diagnosis to roadmap — we guide your modernization from start to finish.",
+        "hero": "Modernize your business without turning it upside down",
+        "problem": "Digital transformation seems scary. Too many tools, too many options, high cost and risk of failure. Without a guide, it's easy to make expensive mistakes.",
+        "delivers": [
+          "Current technology and process audit",
+          "Future roadmap (3 months, 6 months, 12 months)",
+          "Tool selection and vendor evaluation",
+          "Implementation project management",
+          "Change management and team communication"
+        ],
+        "for_whom": "For business owners who know they need to modernize, but don't know where to start.",
+        "result": "Clear roadmap, right tools selected and implementation that doesn't paralyze operations."
+      },
+      "treinamento-ia": {
+        "name": "AI Tools Training & Adoption",
+        "short": "Your team using AI confidently in daily work — workshops tailored to your business.",
+        "hero": "AI in practice, not in theory",
+        "problem": "Everyone talks about AI, but your team still doesn't know how to use it in real work. There's no shortage of tools — there's a shortage of context and proper training.",
+        "delivers": [
+          "Team AI maturity assessment",
+          "Tool-specific workshops (ChatGPT, Copilot, Notion AI and others)",
+          "Custom prompt libraries for your sector",
+          "'AI in your daily workflow' playbooks",
+          "Q&A sessions and ongoing support"
+        ],
+        "for_whom": "For teams that hear about AI every day but still don't know how to apply it at work.",
+        "result": "Productive team with AI, fewer hours spent on manual tasks and real tool adoption."
+      }
+    }
+  },
+  "about": {
+    "title": "About JK Consulting",
+    "mission_title": "Our Mission",
+    "mission": "Help small businesses work less and grow more, with AI and automation implemented in a practical and accessible way.",
+    "founder_title": "Founder",
+    "founder_name": "João",
+    "founder_bio": "Specialist in applied AI and digital transformation for small businesses. I believe technology only has value when it's used. That's why I don't leave projects on paper — I implement, train and follow through until the solution is actually working.",
+    "values_title": "How we work",
+    "values": [
+      "Clarity before complexity — we explain every step in plain language",
+      "Results first — we only propose what generates measurable impact",
+      "Long-term partnership — we don't disappear after delivery",
+      "Business focus, not technology — the tool is a means, not an end"
+    ],
+    "cta": "Let's talk"
+  },
+  "cases": {
+    "title": "Case Studies",
+    "subtitle": "Real results from real businesses",
+    "coming_soon": "Coming soon",
+    "coming_soon_desc": "We're documenting our first cases. Check back soon to see concrete results."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Practical content on AI, automation and efficiency for small businesses",
+    "coming_soon": "Coming soon",
+    "coming_soon_desc": "We're preparing relevant content. Check back soon.",
+    "tags": ["AI", "CRM", "Automation", "Small Business", "Case Study"]
+  },
+  "contact": {
+    "title": "Schedule a Free Call",
+    "subtitle": "No commitment. 30 minutes to understand your challenge and see if it makes sense for us to work together.",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "challenge": "What is your biggest challenge today?",
+      "preferred_contact": "Preferred contact method",
+      "whatsapp": "WhatsApp",
+      "email_option": "Email",
+      "submit": "Send message",
+      "success": "Message sent! I'll get back to you within 24 hours.",
+      "error": "Error sending. Please try again or contact via WhatsApp."
+    },
+    "whatsapp_btn": "Chat on WhatsApp",
+    "calendly_title": "Prefer to schedule directly?"
+  },
+  "login": {
+    "title": "Access Portal",
+    "client_tab": "Client",
+    "partner_tab": "Partner",
+    "email": "Email",
+    "password": "Password",
+    "forgot_password": "Forgot my password",
+    "submit": "Sign in",
+    "no_account": "No access? Contact João.",
+    "error": "Incorrect email or password.",
+    "loading": "Signing in..."
+  },
+  "portal": {
+    "client": {
+      "title": "Client Portal",
+      "dashboard": "Dashboard",
+      "projects": "Projects",
+      "documents": "Documents",
+      "invoices": "Invoices",
+      "messages": "Messages",
+      "settings": "Settings",
+      "logout": "Sign out",
+      "welcome": "Welcome",
+      "active_projects": "Active Projects",
+      "recent_activity": "Recent Activity",
+      "next_steps": "Next Steps",
+      "status": {
+        "not_started": "Not Started",
+        "in_progress": "In Progress",
+        "in_review": "In Review",
+        "completed": "Completed"
+      },
+      "invoice_status": {
+        "sent": "Sent",
+        "paid": "Paid",
+        "overdue": "Overdue"
+      },
+      "no_projects": "No active projects at the moment.",
+      "no_documents": "No documents available.",
+      "no_invoices": "No invoices available.",
+      "no_messages": "No messages."
+    },
+    "partner": {
+      "title": "Partner Portal",
+      "dashboard": "Dashboard",
+      "leads": "Leads",
+      "commissions": "Commissions",
+      "tickets": "Tickets",
+      "resources": "Resources",
+      "settings": "Settings",
+      "logout": "Sign out",
+      "welcome": "Welcome",
+      "submit_lead": "Submit Lead",
+      "open_ticket": "Open Ticket",
+      "lead_status": {
+        "submitted": "Submitted",
+        "contacted": "Contacted",
+        "proposal_sent": "Proposal Sent",
+        "won": "Won",
+        "lost": "Lost"
+      },
+      "commission_status": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "paid": "Paid"
+      },
+      "ticket_status": {
+        "open": "Open",
+        "in_progress": "In Progress",
+        "waiting": "Waiting for Reply",
+        "resolved": "Resolved",
+        "closed": "Closed"
+      },
+      "ticket_category": {
+        "technical": "Technical Support",
+        "commercial": "Commercial Question",
+        "commission": "Commission Issue",
+        "collaboration": "Collaboration",
+        "other": "Other"
+      },
+      "ticket_priority": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "no_leads": "No leads submitted yet.",
+      "no_commissions": "No commissions recorded.",
+      "no_tickets": "No tickets opened."
+    },
+    "admin": {
+      "title": "Admin Panel",
+      "clients": "Clients",
+      "partners": "Partners",
+      "projects": "Projects",
+      "invoices": "Invoices",
+      "tickets": "Tickets",
+      "content": "Content"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back",
+    "send": "Send",
+    "download": "Download",
+    "upload": "Upload",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

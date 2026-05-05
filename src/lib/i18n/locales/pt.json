@@ -1,0 +1,318 @@
+{
+  "nav": {
+    "services": "Serviços",
+    "about": "Sobre",
+    "cases": "Casos de Sucesso",
+    "blog": "Blog",
+    "contact": "Contato",
+    "login": "Login",
+    "portal": "Portal"
+  },
+  "home": {
+    "hero": {
+      "headline": "Automatize o trabalho manual. Foque no que importa.",
+      "subheadline": "A JK Consulting implementa IA e automação para pequenas empresas que não têm tempo a perder com processos repetitivos.",
+      "cta_primary": "Agende uma Call Gratuita",
+      "cta_secondary": "Ver Serviços"
+    },
+    "problem": {
+      "title": "Você está perdendo tempo em tarefas que poderiam ser automatizadas?",
+      "text": "Pequenas empresas gastam horas em trabalho manual, repetitivo e sem valor. Planilhas que não conversam entre si. E-mails que ficam sem resposta. Dados espalhados por todo lugar. Você sabe que existe uma solução — mas não sabe por onde começar."
+    },
+    "how": {
+      "title": "Como ajudamos"
+    },
+    "why": {
+      "title": "Por que JK Consulting",
+      "items": [
+        { "title": "Implementação feita pra você", "desc": "Não entregamos slides. Colocamos a solução no ar e garantimos que funcione." },
+        { "title": "Zero jargão técnico", "desc": "Falamos a língua do negócio, não de TI. Você entende cada passo." },
+        { "title": "Foco em pequenas empresas", "desc": "Não somos uma grande consultoria. Somos o parceiro certo para quem está crescendo." },
+        { "title": "Resultados mensuráveis", "desc": "Definimos metas claras antes de começar. Você mede o impacto no seu bolso." }
+      ]
+    },
+    "testimonials": {
+      "title": "O que nossos clientes dizem",
+      "placeholder": "Depoimentos em breve"
+    },
+    "cases_preview": {
+      "title": "Resultados reais",
+      "placeholder": "Casos de sucesso em breve",
+      "cta": "Ver todos os casos"
+    },
+    "final_cta": {
+      "title": "Pronto para parar de perder tempo?",
+      "cta": "Agende uma Call Gratuita"
+    }
+  },
+  "services": {
+    "title": "Serviços",
+    "subtitle": "Soluções práticas de IA e automação para pequenas empresas",
+    "learn_more": "Saiba mais",
+    "cta": "Agende uma Call de Descoberta",
+    "problem": "Problema que resolve",
+    "delivers": "O que entregamos",
+    "for_whom": "Para quem é",
+    "result": "Resultado esperado",
+    "list": {
+      "automacao-ia": {
+        "name": "Automação de Processos com IA",
+        "short": "Identifique e elimine tarefas manuais com fluxos automatizados por IA.",
+        "hero": "Pare de fazer manualmente o que a IA pode fazer por você",
+        "problem": "Sua equipe gasta horas em tarefas repetitivas: responder e-mails, lançar dados, copiar informações entre sistemas. Isso custa dinheiro e energia que deveriam estar em crescimento.",
+        "delivers": [
+          "Respostas e follow-ups automáticos por e-mail",
+          "Entrada de dados e processamento de documentos com IA",
+          "Gatilhos de fluxo de trabalho entre ferramentas (CRM → fatura → notificação)",
+          "Chatbots de IA para triagem de clientes ou atendimento de FAQs",
+          "Automação de qualificação de leads"
+        ],
+        "for_whom": "Para pequenas empresas com processos repetitivos que consomem tempo da equipe.",
+        "result": "Redução de horas manuais por semana. Menos erros. Equipe focada em trabalho estratégico."
+      },
+      "consultoria-crm": {
+        "name": "Consultoria e Implementação de CRM",
+        "short": "CRM certo, configurado e funcionando — com sua equipe usando de verdade.",
+        "hero": "Um CRM que sua equipe realmente usa",
+        "problem": "Muitas empresas têm um CRM, mas ele virou um cemitério de dados. Ninguém usa. Nada é atualizado. A visão do funil de vendas é zero.",
+        "delivers": [
+          "Seleção de plataforma de CRM (HubSpot, Zoho, Pipedrive e outros)",
+          "Setup completo de CRM e migração de dados",
+          "Pipelines personalizados para vendas, atendimento ou operações",
+          "Sequências automáticas de follow-up",
+          "Dashboards de relatórios",
+          "Treinamento e suporte à adoção pela equipe"
+        ],
+        "for_whom": "Para empresas que perderam leads por falta de acompanhamento ou que nunca tiveram um processo de vendas estruturado.",
+        "result": "Time de vendas organizado, follow-ups automáticos e visibilidade total do funil."
+      },
+      "otimizacao-processos": {
+        "name": "Otimização de Processos e Eficiência",
+        "short": "Mapeamos seus gargalos e redesenhamos os fluxos para liberar sua equipe.",
+        "hero": "Menos desperdício. Mais resultado.",
+        "problem": "Todo negócio tem gargalos. Passos que demoram, aprovações que travam, informações que se perdem. O problema é que quando você está dentro, é difícil enxergar.",
+        "delivers": [
+          "Mapeamento e documentação de processos de negócio",
+          "Análise de gargalos",
+          "Criação de SOPs (procedimentos operacionais padrão)",
+          "Recomendações de consolidação de ferramentas",
+          "Relatório de economia de tempo (antes vs. depois)"
+        ],
+        "for_whom": "Para empresas que sentem que trabalham muito mas os resultados não acompanham o esforço.",
+        "result": "Processos documentados, gargalos eliminados e equipe investindo tempo em atividades de alto valor."
+      },
+      "analytics-dados": {
+        "name": "Analytics e Relatórios de Dados",
+        "short": "Dashboards que sua equipe usa de verdade — sem time de dados.",
+        "hero": "Tome decisões com dados, não com achismo",
+        "problem": "Você tem dados espalhados em planilhas, CRMs e sistemas. Mas na hora de tomar uma decisão, tudo vira intuição porque ninguém tem tempo de consolidar nada.",
+        "delivers": [
+          "Identificação de KPIs e criação de dashboards",
+          "Setup de Google Sheets / Looker Studio / Power BI",
+          "Relatórios semanais/mensais automatizados",
+          "Análise de funil de vendas",
+          "Insights de comportamento do cliente"
+        ],
+        "for_whom": "Para gestores que precisam de visibilidade do negócio sem depender de um analista de dados.",
+        "result": "Dashboard atualizado automaticamente, reuniões com dados na mão e decisões mais rápidas."
+      },
+      "transformacao-digital": {
+        "name": "Estratégia de Transformação Digital",
+        "short": "Do diagnóstico ao roadmap — guiamos sua modernização do início ao fim.",
+        "hero": "Modernize seu negócio sem virar de cabeça para baixo",
+        "problem": "Transformação digital parece assustador. Muitas ferramentas, muitas opções, custo alto e risco de dar errado. Sem um guia, é fácil tomar decisões que custam caro.",
+        "delivers": [
+          "Auditoria do estado atual de tecnologia e processos",
+          "Roadmap futuro (3 meses, 6 meses, 12 meses)",
+          "Seleção de ferramentas e avaliação de fornecedores",
+          "Gestão de projetos de implementação",
+          "Gestão de mudança e comunicação com a equipe"
+        ],
+        "for_whom": "Para donos de empresas que sabem que precisam modernizar, mas não sabem por onde começar.",
+        "result": "Roadmap claro, ferramentas certas escolhidas e implementação que não paralisa a operação."
+      },
+      "treinamento-ia": {
+        "name": "Treinamento e Adoção de Ferramentas de IA",
+        "short": "Sua equipe usando IA com confiança no dia a dia — workshops feitos para o seu negócio.",
+        "hero": "IA na prática, não na teoria",
+        "problem": "Todo mundo fala em IA, mas sua equipe ainda não sabe como usar no trabalho real. Não faltam ferramentas — falta contexto e treinamento adequado.",
+        "delivers": [
+          "Avaliação de maturidade da equipe em relação à IA",
+          "Workshops por ferramenta (ChatGPT, Copilot, Notion AI e outros)",
+          "Bibliotecas de prompts personalizadas para o seu setor",
+          "Playbooks de 'IA no seu fluxo de trabalho diário'",
+          "Sessões de dúvidas e suporte contínuo"
+        ],
+        "for_whom": "Para equipes que ouvem falar de IA todo dia mas ainda não sabem como aplicar no trabalho.",
+        "result": "Equipe produtiva com IA, menos horas gastas em tarefas braçais e adoção real das ferramentas."
+      }
+    }
+  },
+  "about": {
+    "title": "Sobre a JK Consulting",
+    "mission_title": "Nossa Missão",
+    "mission": "Ajudar pequenas empresas a trabalhar menos e crescer mais, com IA e automação implementadas de forma prática e acessível.",
+    "founder_title": "Fundador",
+    "founder_name": "João",
+    "founder_bio": "Especialista em IA aplicada e transformação digital para pequenas empresas. Acredito que tecnologia só tem valor quando é usada. Por isso, não deixo o projeto na prancheta — implemento, treino e acompanho até a solução estar funcionando de verdade.",
+    "values_title": "Como trabalhamos",
+    "values": [
+      "Clareza antes de complexidade — explicamos cada passo em linguagem simples",
+      "Resultados primeiro — só propomos o que gera impacto mensurável",
+      "Parceria de longo prazo — não desaparecemos após a entrega",
+      "Foco no negócio, não na tecnologia — a ferramenta é meio, não fim"
+    ],
+    "cta": "Vamos conversar"
+  },
+  "cases": {
+    "title": "Casos de Sucesso",
+    "subtitle": "Resultados reais de empresas reais",
+    "coming_soon": "Em breve",
+    "coming_soon_desc": "Estamos documentando os primeiros casos. Volte em breve para ver resultados concretos."
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Conteúdo prático sobre IA, automação e eficiência para pequenas empresas",
+    "coming_soon": "Em breve",
+    "coming_soon_desc": "Estamos preparando conteúdo relevante. Volte em breve.",
+    "tags": ["IA", "CRM", "Automação", "Pequenas Empresas", "Caso de Sucesso"]
+  },
+  "contact": {
+    "title": "Agende uma Call Gratuita",
+    "subtitle": "Sem compromisso. 30 minutos para entender seu desafio e ver se faz sentido trabalharmos juntos.",
+    "form": {
+      "name": "Nome",
+      "company": "Empresa",
+      "email": "E-mail",
+      "phone": "Telefone (opcional)",
+      "challenge": "Qual é o seu maior desafio hoje?",
+      "preferred_contact": "Forma de contato preferida",
+      "whatsapp": "WhatsApp",
+      "email_option": "E-mail",
+      "submit": "Enviar mensagem",
+      "success": "Mensagem enviada! Entrarei em contato em até 24 horas.",
+      "error": "Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp."
+    },
+    "whatsapp_btn": "Falar pelo WhatsApp",
+    "calendly_title": "Prefere agendar direto?"
+  },
+  "login": {
+    "title": "Acessar Portal",
+    "client_tab": "Cliente",
+    "partner_tab": "Parceiro",
+    "email": "E-mail",
+    "password": "Senha",
+    "forgot_password": "Esqueci minha senha",
+    "submit": "Entrar",
+    "no_account": "Não tem acesso? Entre em contato com João.",
+    "error": "E-mail ou senha incorretos.",
+    "loading": "Entrando..."
+  },
+  "portal": {
+    "client": {
+      "title": "Portal do Cliente",
+      "dashboard": "Dashboard",
+      "projects": "Projetos",
+      "documents": "Documentos",
+      "invoices": "Faturas",
+      "messages": "Mensagens",
+      "settings": "Configurações",
+      "logout": "Sair",
+      "welcome": "Bem-vindo",
+      "active_projects": "Projetos Ativos",
+      "recent_activity": "Atividade Recente",
+      "next_steps": "Próximos Passos",
+      "status": {
+        "not_started": "Não Iniciado",
+        "in_progress": "Em Andamento",
+        "in_review": "Em Revisão",
+        "completed": "Concluído"
+      },
+      "invoice_status": {
+        "sent": "Enviada",
+        "paid": "Paga",
+        "overdue": "Em Atraso"
+      },
+      "no_projects": "Nenhum projeto ativo no momento.",
+      "no_documents": "Nenhum documento disponível.",
+      "no_invoices": "Nenhuma fatura disponível.",
+      "no_messages": "Nenhuma mensagem."
+    },
+    "partner": {
+      "title": "Portal do Parceiro",
+      "dashboard": "Dashboard",
+      "leads": "Leads",
+      "commissions": "Comissões",
+      "tickets": "Chamados",
+      "resources": "Recursos",
+      "settings": "Configurações",
+      "logout": "Sair",
+      "welcome": "Bem-vindo",
+      "submit_lead": "Indicar Lead",
+      "open_ticket": "Abrir Chamado",
+      "lead_status": {
+        "submitted": "Submetido",
+        "contacted": "Contatado",
+        "proposal_sent": "Proposta Enviada",
+        "won": "Ganho",
+        "lost": "Perdido"
+      },
+      "commission_status": {
+        "pending": "Pendente",
+        "approved": "Aprovada",
+        "paid": "Paga"
+      },
+      "ticket_status": {
+        "open": "Aberto",
+        "in_progress": "Em Andamento",
+        "waiting": "Aguardando Resposta",
+        "resolved": "Resolvido",
+        "closed": "Fechado"
+      },
+      "ticket_category": {
+        "technical": "Suporte Técnico",
+        "commercial": "Dúvida Comercial",
+        "commission": "Problema de Comissão",
+        "collaboration": "Colaboração",
+        "other": "Outro"
+      },
+      "ticket_priority": {
+        "low": "Baixa",
+        "medium": "Média",
+        "high": "Alta"
+      },
+      "no_leads": "Nenhum lead indicado ainda.",
+      "no_commissions": "Nenhuma comissão registrada.",
+      "no_tickets": "Nenhum chamado aberto."
+    },
+    "admin": {
+      "title": "Painel Administrativo",
+      "clients": "Clientes",
+      "partners": "Parceiros",
+      "projects": "Projetos",
+      "invoices": "Faturas",
+      "tickets": "Chamados",
+      "content": "Conteúdo"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "close": "Fechar",
+    "back": "Voltar",
+    "send": "Enviar",
+    "download": "Download",
+    "upload": "Upload",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "all": "Todos",
+    "yes": "Sim",
+    "no": "Não"
+  }
+}
