@@ -71,7 +71,7 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section className="bg-gray-900 text-white py-24 px-4 overflow-hidden relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,#00A1E020,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,#1B5FFF20,transparent_60%)]" />
         <div className="max-w-5xl mx-auto relative">
           <div className="inline-flex items-center gap-2 bg-blue-600/10 border border-blue-600/30 text-blue-400 text-sm font-medium px-4 py-1.5 rounded-full mb-8">
             <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
@@ -172,7 +172,7 @@ export default function Home() {
             </div>
             {/* DEPOIS */}
             <div className="bg-gray-900 border border-blue-600/30 rounded-2xl p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,#00A1E015,transparent_70%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,#1B5FFF15,transparent_70%)]" />
               <div className="relative">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-blue-600/20 rounded-xl flex items-center justify-center">
@@ -219,7 +219,7 @@ export default function Home() {
 
       {/* ── OFERTA ── */}
       <section className="py-20 px-4 bg-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#00A1E012,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1B5FFF12,transparent_70%)]" />
         <div className="max-w-4xl mx-auto relative">
           <div className="text-center mb-10">
             <span className="text-blue-400 text-sm font-semibold uppercase tracking-widest">Oferta principal</span>

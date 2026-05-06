@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
 import { LanguageToggle } from "./LanguageToggle";
-import { cn } from "@/lib/utils";
 
 export function Header() {
   const { t } = useTranslation();
@@ -20,12 +20,14 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <header className="sticky top-0 z-50 bg-gray-900 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-gray-900">JK</span>
-            <span className="text-xl font-light text-blue-600">Consulting</span>
+          <Link href="/" className="flex items-center gap-2.5">
+            <Image src="/logo.svg" alt="JK Consulting" width={36} height={36} priority />
+            <span className="text-white text-lg font-semibold tracking-tight">
+              JK <span className="text-blue-400 font-light">Consulting</span>
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
@@ -33,7 +35,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-600 hover:text-blue-600 transition-colors font-medium"
+                className="text-sm text-gray-300 hover:text-white transition-colors font-medium"
               >
                 {link.label}
               </Link>
@@ -44,7 +46,7 @@ export function Header() {
             <LanguageToggle />
             <Link
               href="/login"
-              className="text-sm text-gray-600 hover:text-blue-600 transition-colors font-medium"
+              className="text-sm text-gray-300 hover:text-white transition-colors font-medium"
             >
               {t("nav.login")}
             </Link>
@@ -57,7 +59,7 @@ export function Header() {
           </div>
 
           <button
-            className="md:hidden p-2 text-gray-600"
+            className="md:hidden p-2 text-gray-300 hover:text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >
@@ -67,13 +69,13 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-white z-40 flex flex-col p-6 gap-6">
+        <div className="md:hidden fixed inset-0 top-16 bg-gray-900 z-40 flex flex-col p-6 gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-xl font-medium text-gray-800 hover:text-blue-600 transition-colors"
+              className="text-xl font-medium text-gray-200 hover:text-white transition-colors"
             >
               {link.label}
             </Link>
@@ -81,7 +83,7 @@ export function Header() {
           <Link
             href="/login"
             onClick={() => setMobileOpen(false)}
-            className="text-xl font-medium text-gray-800 hover:text-blue-600 transition-colors"
+            className="text-xl font-medium text-gray-200 hover:text-white transition-colors"
           >
             {t("nav.login")}
           </Link>

@@ -12,9 +12,11 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-white text-lg font-bold">JK</span>
-              <span className="text-blue-400 text-lg font-light">Consulting</span>
+            <div className="flex items-center gap-2.5 mb-3">
+              <img src="/logo.svg" alt="JK Consulting" className="h-8 w-8" />
+              <span className="text-white text-lg font-semibold">
+                JK <span className="text-blue-400 font-light">Consulting</span>
+              </span>
             </div>
             <p className="text-sm leading-relaxed">
               {t("about.mission")}
