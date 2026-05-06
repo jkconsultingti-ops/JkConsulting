@@ -10,39 +10,92 @@
   },
   "home": {
     "hero": {
-      "headline": "Automate manual work. Focus on what matters.",
-      "subheadline": "JK Consulting implements AI and automation for small businesses that can't afford to waste time on repetitive processes.",
+      "badge": "Automation · AI · CRM",
+      "headline": "We turn processes into revenue machines.",
+      "subheadline": "AI automation, integrations and CRM for businesses that want to grow with predictability.",
       "cta_primary": "Schedule a Free Call",
-      "cta_secondary": "View Services"
+      "cta_diagnosis": "Schedule a free diagnosis",
+      "cta_secondary": "See how to automate my business",
+      "flow_label": "How it works in practice",
+      "flow_nodes": ["Lead comes in", "AI qualifies", "CRM updates", "Follow-up"]
     },
     "problem": {
-      "title": "Are you losing time on tasks that could be automated?",
-      "text": "Small businesses spend hours on repetitive, low-value manual work. Spreadsheets that don't talk to each other. Emails that go unanswered. Data scattered everywhere. You know there's a solution — but don't know where to start."
-    },
-    "how": {
-      "title": "How we help"
-    },
-    "why": {
-      "title": "Why JK Consulting",
+      "label": "The problem",
+      "title": "Is your business still dependent on manual processes?",
       "items": [
-        { "title": "Done-for-you implementation", "desc": "We don't deliver slide decks. We go live and make sure it works." },
-        { "title": "Zero technical jargon", "desc": "We speak business language, not IT. You understand every step." },
-        { "title": "Small business focus", "desc": "We're not a large consultancy. We're the right partner for growing businesses." },
-        { "title": "Measurable results", "desc": "We set clear goals upfront. You measure the impact on your bottom line." }
+        "Forgotten leads with no follow-up",
+        "Follow-up that depends on the salesperson's memory",
+        "Slow responses that lose clients to competitors",
+        "Opportunities being lost due to lack of process",
+        "Disorganized processes consuming team time"
       ]
     },
-    "testimonials": {
-      "title": "What our clients say",
-      "placeholder": "Testimonials coming soon"
+    "solution": {
+      "label": "The solution",
+      "title": "Automation that delivers real results",
+      "text_1": "We implement automated systems that work for you",
+      "text_bold": "24 hours a day, 7 days a week",
+      "text_2": ". No spreadsheets, no memory, no manual effort."
     },
-    "cases_preview": {
-      "title": "Real results",
-      "placeholder": "Case studies coming soon",
-      "cta": "View all cases"
+    "comparison": {
+      "label": "Before and after",
+      "title": "See the difference in practice",
+      "before_title": "Before",
+      "after_title": "After JK Consulting",
+      "before": [
+        "Manual work every day",
+        "Forgotten leads with no follow-up",
+        "Slow responses that lose clients",
+        "Disorganized pipeline",
+        "Lost opportunities due to lack of process"
+      ],
+      "after": [
+        "Automatic follow-up with AI",
+        "Leads qualified and nurtured automatically",
+        "Instant responses 24/7",
+        "Pipeline running automatically",
+        "More conversions with less effort"
+      ]
+    },
+    "services_section": {
+      "label": "What we do",
+      "title": "Services that deliver results",
+      "items": [
+        { "title": "AI Automation", "desc": "Workflows that work for you 24/7 — lead qualification, follow-up and support on autopilot." },
+        { "title": "Integrations (n8n, APIs, WhatsApp)", "desc": "We connect all your business tools so data flows without manual effort." },
+        { "title": "CRM (Salesforce and others)", "desc": "We implement and optimize the right CRM for your business, with the pipeline running on its own." },
+        { "title": "Automated sales flows", "desc": "We create sales sequences that nurture, convert and close — without relying on the salesperson's memory." }
+      ]
+    },
+    "offer": {
+      "label": "Main offer",
+      "title": "Automation Growth Setup",
+      "text_1": "We implement automations in your business in up to",
+      "text_bold": "15 days",
+      "text_2": "to increase conversion and reduce manual work.",
+      "items": [
+        "Sales pipeline setup",
+        "Essential follow-up automations",
+        "Integrations between main tools",
+        "Results tracking dashboard"
+      ],
+      "fine_print": "No commitment. 100% free."
+    },
+    "how": {
+      "label": "Process",
+      "title": "How it works",
+      "steps": [
+        { "title": "Free diagnosis", "desc": "We map your business and identify where you're losing money with manual processes." },
+        { "title": "Process mapping", "desc": "We design the ideal workflow with automations, integrations and CRM for your context." },
+        { "title": "Automation implementation", "desc": "We launch everything in up to 15 days. No fluff, no theory." },
+        { "title": "Continuous optimization", "desc": "We monitor results and adjust to maximize conversion and efficiency." }
+      ]
     },
     "final_cta": {
-      "title": "Ready to stop wasting time?",
-      "cta": "Schedule a Free Call"
+      "title": "Ready to automate your business?",
+      "subtitle": "Less manual work. More sales on autopilot.",
+      "cta": "Schedule a free diagnosis",
+      "fine_print": "No commitment · Response within 24h"
     }
   },
   "services": {

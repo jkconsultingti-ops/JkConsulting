@@ -10,39 +10,92 @@
   },
   "home": {
     "hero": {
-      "headline": "Automatize o trabalho manual. Foque no que importa.",
-      "subheadline": "A JK Consulting implementa IA e automação para pequenas empresas que não têm tempo a perder com processos repetitivos.",
+      "badge": "Automação · IA · CRM",
+      "headline": "Transformamos processos em máquinas de receita.",
+      "subheadline": "Automação com IA, integrações e CRM para empresas que querem crescer com previsibilidade.",
       "cta_primary": "Agende uma Call Gratuita",
-      "cta_secondary": "Ver Serviços"
+      "cta_diagnosis": "Agendar diagnóstico gratuito",
+      "cta_secondary": "Ver como automatizar meu negócio",
+      "flow_label": "Como funciona na prática",
+      "flow_nodes": ["Lead entra", "IA qualifica", "CRM atualiza", "Follow-up"]
     },
     "problem": {
-      "title": "Você está perdendo tempo em tarefas que poderiam ser automatizadas?",
-      "text": "Pequenas empresas gastam horas em trabalho manual, repetitivo e sem valor. Planilhas que não conversam entre si. E-mails que ficam sem resposta. Dados espalhados por todo lugar. Você sabe que existe uma solução — mas não sabe por onde começar."
-    },
-    "how": {
-      "title": "Como ajudamos"
-    },
-    "why": {
-      "title": "Por que JK Consulting",
+      "label": "O problema",
+      "title": "Seu negócio ainda depende de processos manuais?",
       "items": [
-        { "title": "Implementação feita pra você", "desc": "Não entregamos slides. Colocamos a solução no ar e garantimos que funcione." },
-        { "title": "Zero jargão técnico", "desc": "Falamos a língua do negócio, não de TI. Você entende cada passo." },
-        { "title": "Foco em pequenas empresas", "desc": "Não somos uma grande consultoria. Somos o parceiro certo para quem está crescendo." },
-        { "title": "Resultados mensuráveis", "desc": "Definimos metas claras antes de começar. Você mede o impacto no seu bolso." }
+        "Leads esquecidos sem nenhum acompanhamento",
+        "Follow-up que depende da memória do vendedor",
+        "Atendimento lento que perde clientes para o concorrente",
+        "Oportunidades sendo perdidas por falta de processo",
+        "Processos desorganizados que consomem tempo da equipe"
       ]
     },
-    "testimonials": {
-      "title": "O que nossos clientes dizem",
-      "placeholder": "Depoimentos em breve"
+    "solution": {
+      "label": "A solução",
+      "title": "Automação que gera resultado real",
+      "text_1": "Implementamos sistemas automatizados que trabalham por você",
+      "text_bold": "24 horas por dia, 7 dias por semana",
+      "text_2": ". Sem depender de planilha, sem depender de memória, sem depender de esforço manual."
     },
-    "cases_preview": {
-      "title": "Resultados reais",
-      "placeholder": "Casos de sucesso em breve",
-      "cta": "Ver todos os casos"
+    "comparison": {
+      "label": "Antes e depois",
+      "title": "Veja a diferença na prática",
+      "before_title": "Antes",
+      "after_title": "Depois da JK Consulting",
+      "before": [
+        "Trabalho manual todo dia",
+        "Leads esquecidos sem follow-up",
+        "Respostas lentas que perdem clientes",
+        "Pipeline desorganizado",
+        "Perda de oportunidades por falta de processo"
+      ],
+      "after": [
+        "Follow-up automático com IA",
+        "Leads qualificados e nutridos sozinhos",
+        "Respostas imediatas 24/7",
+        "Pipeline rodando no automático",
+        "Mais conversões com menos esforço"
+      ]
+    },
+    "services_section": {
+      "label": "O que fazemos",
+      "title": "Serviços que geram resultado",
+      "items": [
+        { "title": "Automação com IA", "desc": "Fluxos que trabalham por você 24/7 — qualificação de leads, follow-up e atendimento no automático." },
+        { "title": "Integrações (n8n, APIs, WhatsApp)", "desc": "Conectamos todas as ferramentas do seu negócio para que os dados fluam sem trabalho manual." },
+        { "title": "CRM (Salesforce e outros)", "desc": "Implementamos e otimizamos o CRM certo para o seu negócio, com pipeline rodando sozinho." },
+        { "title": "Fluxos de vendas automatizados", "desc": "Criamos sequências de vendas que nutrem, convertem e fecham — sem depender da memória do vendedor." }
+      ]
+    },
+    "offer": {
+      "label": "Oferta principal",
+      "title": "Automation Growth Setup",
+      "text_1": "Implementamos automações no seu negócio em até",
+      "text_bold": "15 dias",
+      "text_2": "para aumentar conversão e reduzir trabalho manual.",
+      "items": [
+        "Estruturação do pipeline de vendas",
+        "Automações essenciais de follow-up",
+        "Integrações entre as principais ferramentas",
+        "Dashboard de acompanhamento de resultados"
+      ],
+      "fine_print": "Sem compromisso. 100% gratuito."
+    },
+    "how": {
+      "label": "Processo",
+      "title": "Como funciona",
+      "steps": [
+        { "title": "Diagnóstico gratuito", "desc": "Mapeamos seu negócio e identificamos onde está perdendo dinheiro com processos manuais." },
+        { "title": "Mapeamento de processos", "desc": "Desenhamos o fluxo ideal com automações, integrações e CRM para o seu contexto." },
+        { "title": "Implementação das automações", "desc": "Colocamos tudo no ar em até 15 dias. Sem enrolação, sem teoria." },
+        { "title": "Otimização contínua", "desc": "Acompanhamos os resultados e ajustamos para maximizar conversão e eficiência." }
+      ]
     },
     "final_cta": {
-      "title": "Pronto para parar de perder tempo?",
-      "cta": "Agende uma Call Gratuita"
+      "title": "Pronto para automatizar seu negócio?",
+      "subtitle": "Menos trabalho manual. Mais vendas no automático.",
+      "cta": "Agendar diagnóstico gratuito",
+      "fine_print": "Sem compromisso · Resposta em até 24h"
     }
   },
   "services": {
