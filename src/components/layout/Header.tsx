@@ -24,7 +24,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/logo.png" alt="JK Consulting" width={36} height={36} priority />
+            <Image src="/Logo.png" alt="JK Consulting" width={36} height={36} priority />
             <span className="text-white text-lg font-semibold tracking-tight">
               JK <span className="text-blue-400 font-light">Consulting</span>
             </span>

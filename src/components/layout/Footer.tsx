@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2.5 mb-3">
-              <img src="/logo.png" alt="JK Consulting" className="h-8 w-8" />
+              <img src="/Logo.png" alt="JK Consulting" className="h-8 w-8" />
               <span className="text-white text-lg font-semibold">
                 JK <span className="text-blue-400 font-light">Consulting</span>
               </span>
