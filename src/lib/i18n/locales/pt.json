@@ -19,6 +19,15 @@
       "flow_label": "Como funciona na prática",
       "flow_nodes": ["Lead entra", "IA qualifica", "CRM atualiza", "Follow-up"]
     },
+    "metrics": {
+      "disclaimer": "Baseado em benchmarks do setor e média dos primeiros clientes",
+      "items": [
+        { "value": "12h", "unit": "por semana", "desc": "economizadas com follow-up automático" },
+        { "value": "3×", "unit": "mais rápido", "desc": "no tempo de resposta para leads" },
+        { "value": "+40%", "unit": "conversão", "desc": "com pipeline e CRM estruturado" },
+        { "value": "15", "unit": "dias", "desc": "para implementar e ver resultado" }
+      ]
+    },
     "problem": {
       "label": "O problema",
       "title": "Seu negócio ainda depende de processos manuais?",

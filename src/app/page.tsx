@@ -41,6 +41,7 @@ export default function Home() {
   const beforeItems: string[] = t("home.comparison.before", { returnObjects: true }) as string[];
   const afterItems: string[]  = t("home.comparison.after",  { returnObjects: true }) as string[];
   const serviceItems: { title: string; desc: string; cta: string; slug: string }[] = t("home.services_section.items", { returnObjects: true }) as { title: string; desc: string; cta: string; slug: string }[];
+  const metrics: { value: string; unit: string; desc: string }[] = t("home.metrics.items", { returnObjects: true }) as { value: string; unit: string; desc: string }[];
   const offerItems: string[]  = t("home.offer.items",  { returnObjects: true }) as string[];
   const steps: { title: string; desc: string }[] = t("home.how.steps", { returnObjects: true }) as { title: string; desc: string }[];
 
@@ -85,6 +86,24 @@ export default function Home() {
             </p>
             <AutomationFlow nodes={flowNodes} />
           </div>
+        </div>
+      </section>
+
+      {/* ── MÉTRICAS ── */}
+      <section className="bg-gray-900 border-t border-white/10 py-12 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {metrics.map(({ value, unit, desc }) => (
+              <div key={desc} className="text-center">
+                <div className="flex items-baseline justify-center gap-1.5 mb-1">
+                  <span className="text-4xl md:text-5xl font-bold text-white">{value}</span>
+                  <span className="text-blue-400 font-semibold text-base">{unit}</span>
+                </div>
+                <p className="text-gray-400 text-sm leading-snug">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-gray-600 text-xs mt-8">* {t("home.metrics.disclaimer")}</p>
         </div>
       </section>
 

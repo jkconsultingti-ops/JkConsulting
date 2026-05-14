@@ -19,6 +19,15 @@
       "flow_label": "How it works in practice",
       "flow_nodes": ["Lead comes in", "AI qualifies", "CRM updates", "Follow-up"]
     },
+    "metrics": {
+      "disclaimer": "Based on industry benchmarks and early client averages",
+      "items": [
+        { "value": "12h", "unit": "per week", "desc": "saved with automatic follow-up" },
+        { "value": "3×", "unit": "faster", "desc": "response time to leads" },
+        { "value": "+40%", "unit": "conversion", "desc": "with structured pipeline and CRM" },
+        { "value": "15", "unit": "days", "desc": "to implement and see results" }
+      ]
+    },
     "problem": {
       "label": "The problem",
       "title": "Is your business still dependent on manual processes?",
