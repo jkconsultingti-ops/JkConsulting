@@ -296,6 +296,7 @@ export default function Home() {
               { name: "OpenAI", src: "/tools/openai.svg" },
               { name: "WhatsApp Business", src: "/tools/whatsapp.svg" },
               { name: "Make", src: "/tools/make.svg" },
+              { name: "OpenClaw", src: "/tools/openclaw.svg" },
             ].map(({ name, src }) => (
               <div key={name} className="flex flex-col items-center gap-2.5 group">
                 <div className="w-14 h-14 rounded-2xl overflow-hidden grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 shadow-sm">
