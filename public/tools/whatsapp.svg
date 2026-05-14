@@ -1,6 +1,6 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Speech bubble body -->
-  <path d="M50 6 C26 6 6 23 6 44 C6 55 11 65 20 73 L14 94 L36 84 C40 85 45 86 50 86 C74 86 94 69 94 48 C94 27 74 6 50 6Z" fill="#25D366"/>
-  <!-- White B -->
-  <text x="51" y="66" text-anchor="middle" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="44" fill="white">B</text>
+  <!-- Speech bubble: circle + tail -->
+  <path d="M50 5 C25 5 5 23 5 45 C5 57 10 68 20 76 L14 95 L34 83 C39 85 44 86 50 86 C75 86 95 68 95 45 C95 22 75 5 50 5Z" fill="#25D366"/>
+  <!-- Bold B centered in bubble -->
+  <text x="52" y="64" text-anchor="middle" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="46" fill="white">B</text>
 </svg>
