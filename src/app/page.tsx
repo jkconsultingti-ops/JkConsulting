@@ -1,11 +1,26 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, CheckCircle2, XCircle, Zap, GitMerge, BarChart2, Database, ArrowDown } from "lucide-react";
 
 const serviceIcons = [Zap, GitMerge, Database, BarChart2];
 const stepNumbers = ["01", "02", "03", "04"];
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 36 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1], delay },
+});
+
+const slideIn = (from: "left" | "right", delay = 0) => ({
+  initial: { opacity: 0, x: from === "left" ? -52 : 52 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.55, ease: [0.25, 0.1, 0.25, 1], delay },
+});
 
 function AutomationFlow({ nodes }: { nodes: string[] }) {
   return (
@@ -93,17 +108,17 @@ export default function Home() {
       <section className="bg-gray-900 border-t border-white/10 py-12 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {metrics.map(({ value, unit, desc }) => (
-              <div key={desc} className="text-center">
+            {metrics.map(({ value, unit, desc }, i) => (
+              <motion.div key={desc} className="text-center" {...fadeUp(i * 0.1)}>
                 <div className="flex items-baseline justify-center gap-1.5 mb-1">
                   <span className="text-4xl md:text-5xl font-bold text-white">{value}</span>
                   <span className="text-blue-400 font-semibold text-base">{unit}</span>
                 </div>
                 <p className="text-gray-400 text-sm leading-snug">{desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-          <p className="text-center text-gray-600 text-xs mt-8">* {t("home.metrics.disclaimer")}</p>
+          <motion.p className="text-center text-gray-600 text-xs mt-8" {...fadeUp(0.4)}>* {t("home.metrics.disclaimer")}</motion.p>
         </div>
       </section>
 
@@ -117,11 +132,11 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {problemItems.map((item) => (
-              <div key={item} className="flex gap-3 items-start bg-red-50 border border-red-100 rounded-xl px-5 py-4">
+            {problemItems.map((item, i) => (
+              <motion.div key={item} className="flex gap-3 items-start bg-red-50 border border-red-100 rounded-xl px-5 py-4" {...slideIn("left", i * 0.08)}>
                 <XCircle size={20} className="text-red-400 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
           <div className="text-center mt-10">
@@ -155,7 +170,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+            <motion.div className="bg-gray-50 border border-gray-200 rounded-2xl p-8" {...slideIn("left")}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
                   <XCircle size={20} className="text-red-500" />
@@ -170,8 +185,8 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="bg-gray-900 border border-blue-600/30 rounded-2xl p-8 relative overflow-hidden">
+            </motion.div>
+            <motion.div className="bg-gray-900 border border-blue-600/30 rounded-2xl p-8 relative overflow-hidden" {...slideIn("right")}>
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,#1B5FFF15,transparent_70%)]" />
               <div className="relative">
                 <div className="flex items-center gap-3 mb-6">
@@ -189,7 +204,7 @@ export default function Home() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -207,7 +222,7 @@ export default function Home() {
             {serviceItems.map(({ title, desc, cta, slug }, i) => {
               const Icon = serviceIcons[i];
               return (
-                <div key={title} className="bg-white border border-gray-100 rounded-2xl p-7 hover:border-blue-200 hover:shadow-lg transition-all group flex flex-col">
+                <motion.div key={title} className="bg-white border border-gray-100 rounded-2xl p-7 hover:border-blue-200 hover:shadow-lg transition-all group flex flex-col" {...slideIn(i % 2 === 0 ? "left" : "right", i * 0.1)}>
                   <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
                     <Icon size={24} className="text-blue-600" />
                   </div>
@@ -220,7 +235,7 @@ export default function Home() {
                     {cta}
                     <ArrowRight size={15} />
                   </Link>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -271,13 +286,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
             {steps.map(({ title, desc }, i) => (
-              <div key={title} className="text-center relative">
+              <motion.div key={title} className="text-center relative" {...fadeUp(i * 0.1)}>
                 <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-600/20">
                   <span className="text-white font-bold text-lg">{stepNumbers[i]}</span>
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -296,13 +311,13 @@ export default function Home() {
               { name: "OpenAI", src: "/tools/openai.svg" },
               { name: "WhatsApp Business", src: "/tools/whatsapp.svg" },
               { name: "OpenClaw", src: "/tools/openclaw.svg" },
-            ].map(({ name, src }) => (
-              <div key={name} className="flex flex-col items-center gap-2.5 group">
+            ].map(({ name, src }, i) => (
+              <motion.div key={name} className="flex flex-col items-center gap-2.5 group" {...fadeUp(i * 0.08)}>
                 <div className="w-14 h-14 rounded-2xl overflow-hidden grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-1.5">
                   <img src={src} alt={name} className="w-full h-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium group-hover:text-gray-600 transition-colors">{name}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
