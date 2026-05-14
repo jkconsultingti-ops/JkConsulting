@@ -61,10 +61,10 @@
       "label": "What we do",
       "title": "Services that deliver results",
       "items": [
-        { "title": "AI Automation", "desc": "Workflows that work for you 24/7 — lead qualification, follow-up and support on autopilot." },
-        { "title": "Integrations (n8n, APIs, WhatsApp)", "desc": "We connect all your business tools so data flows without manual effort." },
-        { "title": "CRM (Salesforce and others)", "desc": "We implement and optimize the right CRM for your business, with the pipeline running on its own." },
-        { "title": "Automated sales flows", "desc": "We create sales sequences that nurture, convert and close — without relying on the salesperson's memory." }
+        { "title": "AI Automation", "desc": "Workflows that work for you 24/7 — lead qualification, follow-up and support on autopilot.", "cta": "Automate my follow-up", "slug": "automacao" },
+        { "title": "Integrations (n8n, APIs, WhatsApp)", "desc": "We connect all your business tools so data flows without manual effort.", "cta": "Connect my tools", "slug": "integracoes" },
+        { "title": "CRM (Salesforce and others)", "desc": "We implement and optimize the right CRM for your business, with the pipeline running on its own.", "cta": "Implement my CRM", "slug": "crm" },
+        { "title": "Automated sales flows", "desc": "We create sales sequences that nurture, convert and close — without relying on the salesperson's memory.", "cta": "Build my sales flow", "slug": "vendas" }
       ]
     },
     "offer": {
@@ -79,6 +79,7 @@
         "Integrations between main tools",
         "Results tracking dashboard"
       ],
+      "cta": "I want to start in 15 days",
       "fine_print": "No commitment. 100% free."
     },
     "how": {
@@ -94,7 +95,7 @@
     "final_cta": {
       "title": "Ready to automate your business?",
       "subtitle": "Less manual work. More sales on autopilot.",
-      "cta": "Schedule a free diagnosis",
+      "cta": "I want to automate now",
       "fine_print": "No commitment · Response within 24h"
     }
   },

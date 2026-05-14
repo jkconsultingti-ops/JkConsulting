@@ -61,10 +61,10 @@
       "label": "O que fazemos",
       "title": "Serviços que geram resultado",
       "items": [
-        { "title": "Automação com IA", "desc": "Fluxos que trabalham por você 24/7 — qualificação de leads, follow-up e atendimento no automático." },
-        { "title": "Integrações (n8n, APIs, WhatsApp)", "desc": "Conectamos todas as ferramentas do seu negócio para que os dados fluam sem trabalho manual." },
-        { "title": "CRM (Salesforce e outros)", "desc": "Implementamos e otimizamos o CRM certo para o seu negócio, com pipeline rodando sozinho." },
-        { "title": "Fluxos de vendas automatizados", "desc": "Criamos sequências de vendas que nutrem, convertem e fecham — sem depender da memória do vendedor." }
+        { "title": "Automação com IA", "desc": "Fluxos que trabalham por você 24/7 — qualificação de leads, follow-up e atendimento no automático.", "cta": "Automatizar meu follow-up", "slug": "automacao" },
+        { "title": "Integrações (n8n, APIs, WhatsApp)", "desc": "Conectamos todas as ferramentas do seu negócio para que os dados fluam sem trabalho manual.", "cta": "Conectar minhas ferramentas", "slug": "integracoes" },
+        { "title": "CRM (Salesforce e outros)", "desc": "Implementamos e otimizamos o CRM certo para o seu negócio, com pipeline rodando sozinho.", "cta": "Implementar meu CRM", "slug": "crm" },
+        { "title": "Fluxos de vendas automatizados", "desc": "Criamos sequências de vendas que nutrem, convertem e fecham — sem depender da memória do vendedor.", "cta": "Estruturar minhas vendas", "slug": "vendas" }
       ]
     },
     "offer": {
@@ -79,6 +79,7 @@
         "Integrações entre as principais ferramentas",
         "Dashboard de acompanhamento de resultados"
       ],
+      "cta": "Quero começar em 15 dias",
       "fine_print": "Sem compromisso. 100% gratuito."
     },
     "how": {
@@ -94,7 +95,7 @@
     "final_cta": {
       "title": "Pronto para automatizar seu negócio?",
       "subtitle": "Menos trabalho manual. Mais vendas no automático.",
-      "cta": "Agendar diagnóstico gratuito",
+      "cta": "Quero automatizar agora",
       "fine_print": "Sem compromisso · Resposta em até 24h"
     }
   },

@@ -40,7 +40,7 @@ export default function Home() {
   const problemItems: string[] = t("home.problem.items", { returnObjects: true }) as string[];
   const beforeItems: string[] = t("home.comparison.before", { returnObjects: true }) as string[];
   const afterItems: string[]  = t("home.comparison.after",  { returnObjects: true }) as string[];
-  const serviceItems: { title: string; desc: string }[] = t("home.services_section.items", { returnObjects: true }) as { title: string; desc: string }[];
+  const serviceItems: { title: string; desc: string; cta: string; slug: string }[] = t("home.services_section.items", { returnObjects: true }) as { title: string; desc: string; cta: string; slug: string }[];
   const offerItems: string[]  = t("home.offer.items",  { returnObjects: true }) as string[];
   const steps: { title: string; desc: string }[] = t("home.how.steps", { returnObjects: true }) as { title: string; desc: string }[];
 
@@ -185,15 +185,22 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {serviceItems.map(({ title, desc }, i) => {
+            {serviceItems.map(({ title, desc, cta, slug }, i) => {
               const Icon = serviceIcons[i];
               return (
-                <div key={title} className="bg-white border border-gray-100 rounded-2xl p-7 hover:border-blue-200 hover:shadow-lg transition-all group">
+                <div key={title} className="bg-white border border-gray-100 rounded-2xl p-7 hover:border-blue-200 hover:shadow-lg transition-all group flex flex-col">
                   <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
                     <Icon size={24} className="text-blue-600" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
-                  <p className="text-gray-500 leading-relaxed text-sm">{desc}</p>
+                  <p className="text-gray-500 leading-relaxed text-sm flex-1">{desc}</p>
+                  <Link
+                    href={`/contato?s=${slug}`}
+                    className="mt-5 inline-flex items-center gap-1.5 text-blue-600 font-semibold text-sm hover:gap-2.5 transition-all"
+                  >
+                    {cta}
+                    <ArrowRight size={15} />
+                  </Link>
                 </div>
               );
             })}
@@ -224,10 +231,10 @@ export default function Home() {
           </div>
           <div className="text-center">
             <Link
-              href="/contato"
+              href="/contato?s=setup"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 rounded-xl transition-all text-lg group"
             >
-              {t("home.hero.cta_diagnosis")}
+              {t("home.offer.cta")}
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="text-gray-500 text-sm mt-3">{t("home.offer.fine_print")}</p>
