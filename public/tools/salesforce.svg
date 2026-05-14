@@ -1,0 +1,5 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="80" height="80" rx="16" fill="#00A1E0"/>
+  <!-- Cloud shape -->
+  <path d="M40 22 C36 16 28 18 26 24 C20 22 14 28 16 35 C12 36 10 40 12 44 C14 48 18 48 22 46 L58 46 C64 46 68 40 66 34 C64 28 58 26 52 28 C52 18 44 14 40 22Z" fill="white"/>
+</svg>

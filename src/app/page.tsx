@@ -283,6 +283,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FERRAMENTAS ── */}
+      <section className="py-16 px-4 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-10">
+            {t("home.tools.label")}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {[
+              { name: "n8n", src: "/tools/n8n.svg" },
+              { name: "Salesforce", src: "/tools/salesforce.svg" },
+              { name: "OpenAI", src: "/tools/openai.svg" },
+              { name: "WhatsApp Business", src: "/tools/whatsapp.svg" },
+              { name: "Make", src: "/tools/make.svg" },
+            ].map(({ name, src }) => (
+              <div key={name} className="flex flex-col items-center gap-2.5 group">
+                <div className="w-14 h-14 rounded-2xl overflow-hidden grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 shadow-sm">
+                  <img src={src} alt={name} className="w-full h-full object-cover" />
+                </div>
+                <span className="text-xs text-gray-400 font-medium group-hover:text-gray-600 transition-colors">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA FINAL ── */}
       <section className="py-24 px-4 bg-blue-600 text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#ffffff15,transparent_60%)]" />

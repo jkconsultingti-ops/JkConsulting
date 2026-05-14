@@ -19,6 +19,9 @@
       "flow_label": "Como funciona na prática",
       "flow_nodes": ["Lead entra", "IA qualifica", "CRM atualiza", "Follow-up"]
     },
+    "tools": {
+      "label": "Ferramentas que dominamos"
+    },
     "metrics": {
       "disclaimer": "Baseado em benchmarks do setor e média dos primeiros clientes",
       "items": [

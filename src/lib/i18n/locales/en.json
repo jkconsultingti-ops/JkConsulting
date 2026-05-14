@@ -19,6 +19,9 @@
       "flow_label": "How it works in practice",
       "flow_nodes": ["Lead comes in", "AI qualifies", "CRM updates", "Follow-up"]
     },
+    "tools": {
+      "label": "Tools we master"
+    },
     "metrics": {
       "disclaimer": "Based on industry benchmarks and early client averages",
       "items": [
