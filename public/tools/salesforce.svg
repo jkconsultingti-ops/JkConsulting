@@ -1,5 +1,3 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Cloud sized to fill the square viewBox -->
-  <path d="M50 18 C43 8 29 11 25 23 C15 19 4 28 6 41 C1 42 -2 50 1 57 C4 64 13 65 20 62 L80 62 C89 62 96 53 93 44 C90 35 81 32 72 35 C74 20 62 10 50 18Z" fill="#00A1E0"/>
-  <text x="50" y="53" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="12" fill="white" letter-spacing="0.3">salesforce</text>
+<svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 8 C41 -4 24 0 20 15 C8 10 -4 22 -1 37 C-7 39 -10 49 -6 57 C-2 65 9 66 18 63 L82 63 C93 63 101 52 98 41 C95 30 84 27 74 31 C76 13 63 1 50 8Z" fill="#00A1E0"/>
 </svg>
