@@ -295,12 +295,11 @@ export default function Home() {
               { name: "Salesforce", src: "/tools/salesforce.svg" },
               { name: "OpenAI", src: "/tools/openai.svg" },
               { name: "WhatsApp Business", src: "/tools/whatsapp.svg" },
-              { name: "Make", src: "/tools/make.svg" },
               { name: "OpenClaw", src: "/tools/openclaw.svg" },
             ].map(({ name, src }) => (
               <div key={name} className="flex flex-col items-center gap-2.5 group">
-                <div className="w-14 h-14 rounded-2xl overflow-hidden grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 shadow-sm">
-                  <img src={src} alt={name} className="w-full h-full object-cover" />
+                <div className="w-14 h-14 rounded-2xl overflow-hidden grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center p-1.5">
+                  <img src={src} alt={name} className="w-full h-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium group-hover:text-gray-600 transition-colors">{name}</span>
               </div>

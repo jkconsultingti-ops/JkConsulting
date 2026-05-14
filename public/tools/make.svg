@@ -1,4 +1,16 @@
-<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-  <rect width="80" height="80" rx="16" fill="#6D00CC"/>
-  <text x="40" y="48" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="white">Make</text>
+<svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <g stroke="#E8407A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left chain: circle - line - circle - line - circle (branch point) -->
+    <circle cx="14" cy="50" r="10" fill="none"/>
+    <line x1="24" y1="50" x2="36" y2="50"/>
+    <circle cx="46" cy="50" r="10" fill="none"/>
+    <line x1="56" y1="50" x2="68" y2="50"/>
+    <circle cx="68" cy="50" r="10" fill="none"/>
+    <!-- Branch up to top-right -->
+    <path d="M78,50 C88,50 88,20 98,20"/>
+    <circle cx="106" cy="20" r="10" fill="none"/>
+    <!-- Branch down to bottom-right -->
+    <path d="M78,50 C88,50 88,68 98,68"/>
+    <circle cx="106" cy="68" r="10" fill="none"/>
+  </g>
 </svg>

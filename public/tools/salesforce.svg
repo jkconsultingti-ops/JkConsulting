@@ -1,5 +1,6 @@
-<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-  <rect width="80" height="80" rx="16" fill="#00A1E0"/>
+<svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg">
   <!-- Cloud shape -->
-  <path d="M40 22 C36 16 28 18 26 24 C20 22 14 28 16 35 C12 36 10 40 12 44 C14 48 18 48 22 46 L58 46 C64 46 68 40 66 34 C64 28 58 26 52 28 C52 18 44 14 40 22Z" fill="white"/>
+  <path d="M65 20 C58 10 44 13 40 24 C30 20 18 28 20 40 C14 41 10 47 12 53 C14 59 20 60 26 58 L134 58 C142 58 148 50 145 42 C142 34 134 31 126 34 C127 22 116 12 105 16 C99 6 84 6 65 20Z" fill="#00A1E0"/>
+  <!-- salesforce text -->
+  <text x="80" y="50" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="16" fill="white" letter-spacing="0.5">salesforce</text>
 </svg>
