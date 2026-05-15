@@ -216,8 +216,8 @@ export default function ContatoPage() {
                         type="submit"
                         disabled={status === "loading"}
                         className={cn(
-                          "w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-blue-600/20",
-                          status === "loading" && "opacity-70 cursor-not-allowed"
+                          "btn-primary w-full text-white font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2",
+                          status === "loading" && "opacity-60 cursor-not-allowed"
                         )}
                       >
                         <Send size={16} />

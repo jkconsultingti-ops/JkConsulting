@@ -23,7 +23,7 @@ export default {
         },
         gray: {
           50:  "#F0F2F8",
-          900: "#18181E",
+          900: "#0A0D16",
         },
       },
       fontFamily: {

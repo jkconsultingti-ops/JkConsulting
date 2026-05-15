@@ -33,29 +33,47 @@ function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-function AutomationFlow({ nodes }: { nodes: string[] }) {
+type EventStatus = "live" | "done" | "pending";
+const dashboardEvents: { status: EventStatus; icon: string; label: string; detail: string; time: string }[] = [
+  { status: "live",    icon: "●", label: "Lead qualificado detectado",       detail: "Bruno Costa · CEO · score 91/100",                   time: "agora" },
+  { status: "done",    icon: "✓", label: "CRM atualizado automaticamente",   detail: "Pipeline → Proposta · responsável atribuído",        time: "3s"    },
+  { status: "done",    icon: "✓", label: "WhatsApp enviado",                 detail: "Resposta personalizada com histórico do cliente",    time: "5s"    },
+  { status: "pending", icon: "○", label: "Follow-up agendado",               detail: "Amanhã às 10:00 · mensagem personalizada",          time: "15min" },
+];
+
+function LiveDashboard({ flowLabel }: { flowLabel: string }) {
   return (
-    <div className="relative w-full h-24 select-none">
-      <svg viewBox="0 0 400 80" className="w-full h-full">
-        <defs>
-          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#1B5FFF" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#1B5FFF" stopOpacity="0.8" />
-          </linearGradient>
-        </defs>
-        <line x1="40" y1="40" x2="360" y2="40" stroke="url(#lineGrad)" strokeWidth="1.5" strokeDasharray="5 4" />
-        {nodes.map((label, i) => {
-          const x = [10, 35, 60, 85][i] * 4;
-          return (
-            <g key={i}>
-              <circle cx={x} cy="40" r="15" fill="#0F1117" stroke="#1B5FFF" strokeWidth="1.5" />
-              <text x={x} y="44" textAnchor="middle" fill="#5B8FFF" fontSize="10" fontWeight="700">{i + 1}</text>
-              <text x={x} y="67" textAnchor="middle" fill="#475569" fontSize="7.5">{label}</text>
-            </g>
-          );
-        })}
-      </svg>
-    </div>
+    <>
+      <div className="border-b border-white/[0.07] px-5 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+          <span className="text-gray-400 text-xs font-medium">{flowLabel}</span>
+        </div>
+        <span className="text-gray-700 text-[11px] font-mono">jk-automations.app</span>
+      </div>
+      <div className="px-5 py-5 space-y-4">
+        {dashboardEvents.map((ev, i) => (
+          <div key={i} className="flex items-start gap-3">
+            <span className={`text-[11px] mt-0.5 font-mono flex-shrink-0 ${ev.status === "live" ? "text-green-400" : ev.status === "done" ? "text-blue-400" : "text-gray-700"}`}>
+              {ev.icon}
+            </span>
+            <div className="flex-1 min-w-0">
+              <p className={`text-sm font-medium leading-snug ${ev.status === "pending" ? "text-gray-600" : "text-white"}`}>
+                {ev.label}
+              </p>
+              <p className="text-xs text-gray-600 mt-0.5 truncate">{ev.detail}</p>
+            </div>
+            <span className={`text-[11px] flex-shrink-0 font-mono tabular-nums ${ev.status === "live" ? "text-green-400" : "text-gray-700"}`}>
+              {ev.time}
+            </span>
+          </div>
+        ))}
+        <div className="flex items-center gap-2 pt-1">
+          <span className="text-green-500 text-[11px] font-mono">▸</span>
+          <span className="w-1.5 h-3.5 bg-green-500/50 rounded-sm cursor-blink" />
+        </div>
+      </div>
+    </>
   );
 }
 
@@ -70,7 +88,6 @@ const tools = [
 export default function Home() {
   const { t } = useTranslation();
 
-  const flowNodes: string[] = t("home.hero.flow_nodes", { returnObjects: true }) as string[];
   const problemItems: string[] = t("home.problem.items", { returnObjects: true }) as string[];
   const beforeItems: string[] = t("home.comparison.before", { returnObjects: true }) as string[];
   const afterItems: string[] = t("home.comparison.after", { returnObjects: true }) as string[];
@@ -91,6 +108,8 @@ export default function Home() {
         {/* Glow orbs */}
         <div className="absolute top-[-15%] right-[-8%] w-[520px] h-[520px] bg-blue-600/20 rounded-full blur-[130px] pointer-events-none" />
         <div className="absolute bottom-[-20%] left-[-5%] w-[380px] h-[380px] bg-blue-800/15 rounded-full blur-[100px] pointer-events-none" />
+        {/* Noise texture */}
+        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
 
         <div className="max-w-5xl mx-auto relative">
           <motion.div {...fadeUp(0)}>
@@ -106,7 +125,7 @@ export default function Home() {
           >
             {t("home.hero.headline_1")}
             <br />
-            <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 bg-clip-text text-transparent animate-gradient-pan">
               {t("home.hero.headline_2")}
             </span>
           </motion.h1>
@@ -121,34 +140,26 @@ export default function Home() {
           <motion.div className="flex flex-col sm:flex-row gap-3" {...fadeUp(0.2)}>
             <Link
               href="/contato"
-              className="group inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base shadow-lg shadow-blue-600/25"
+              className="btn-primary group inline-flex items-center justify-center gap-2 text-white font-semibold px-8 py-3.5 rounded-xl text-base"
             >
               {t("home.hero.cta_diagnosis")}
               <ArrowRight size={17} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
               href="/servicos"
-              className="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/20 text-gray-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base"
+              className="inline-flex items-center justify-center gap-2 border border-white/[0.12] hover:border-white/25 text-gray-400 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 text-base hover:bg-white/[0.04]"
             >
               {t("home.hero.cta_secondary")}
             </Link>
           </motion.div>
 
-          {/* Glass terminal card */}
+          {/* Live dashboard card */}
           <motion.div
             className="mt-14 rounded-2xl overflow-hidden border border-white/[0.07]"
-            style={{ background: "rgba(255,255,255,0.025)", backdropFilter: "blur(16px)" }}
+            style={{ background: "rgba(13,16,32,0.7)", backdropFilter: "blur(20px)" }}
             {...fadeUp(0.28)}
           >
-            <div className="border-b border-white/[0.07] px-5 py-3 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />
-              <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
-              <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
-              <span className="text-gray-500 text-xs ml-2">{t("home.hero.flow_label")}</span>
-            </div>
-            <div className="px-6 py-5">
-              <AutomationFlow nodes={flowNodes} />
-            </div>
+            <LiveDashboard flowLabel={t("home.hero.flow_label")} />
           </motion.div>
         </div>
       </section>
@@ -160,7 +171,7 @@ export default function Home() {
             {metrics.map(({ value, unit, desc }, i) => (
               <motion.div key={desc} className="px-6 py-2 first:pl-0 last:pr-0" {...fadeUp(i * 0.1)}>
                 <div className="flex items-baseline gap-1.5 mb-1.5">
-                  <span className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-none">
+                  <span className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-none tabular-nums">
                     {value}
                   </span>
                   <span className="text-blue-400 font-semibold text-sm">{unit}</span>
@@ -292,7 +303,7 @@ export default function Home() {
               return (
                 <motion.div
                   key={title}
-                  className="p-px rounded-2xl group"
+                  className="p-px rounded-2xl group hover:-translate-y-0.5 transition-transform duration-200"
                   style={{ background: "linear-gradient(135deg, rgba(27,95,255,0.3) 0%, rgba(27,95,255,0.06) 100%)" }}
                   {...slideIn(i % 2 === 0 ? "left" : "right", i * 0.08)}
                 >
@@ -355,7 +366,7 @@ export default function Home() {
           <motion.div className="text-center" {...fadeUp(0.2)}>
             <Link
               href="/contato?s=setup"
-              className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/20"
+              className="btn-primary group inline-flex items-center gap-2 text-white font-semibold px-10 py-4 rounded-xl"
             >
               {t("home.offer.cta")}
               <ArrowRight size={17} className="group-hover:translate-x-0.5 transition-transform" />
@@ -433,7 +444,7 @@ export default function Home() {
             </p>
             <Link
               href="/contato"
-              className="group inline-flex items-center gap-2.5 bg-white text-gray-900 hover:bg-gray-100 font-bold px-10 py-4 rounded-xl transition-all duration-200 text-base shadow-2xl"
+              className="btn-white group inline-flex items-center gap-2.5 text-gray-900 font-bold px-10 py-4 rounded-xl text-base"
             >
               {t("home.final_cta.cta")}
               <ArrowRight size={17} className="group-hover:translate-x-0.5 transition-transform" />

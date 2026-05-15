@@ -168,7 +168,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
             <p className="text-gray-400 mb-8">{t("home.final_cta.subtitle")}</p>
             <Link
               href="/contato"
-              className="group inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-xl transition-all duration-200 shadow-lg shadow-blue-600/25"
+              className="btn-primary group inline-flex items-center gap-2 text-white font-semibold px-8 py-3.5 rounded-xl"
             >
               {t("services.cta")}
               <ArrowRight size={17} className="group-hover:translate-x-0.5 transition-transform" />
