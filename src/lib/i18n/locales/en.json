@@ -12,6 +12,8 @@
     "hero": {
       "badge": "Automation · AI · CRM",
       "headline": "We turn processes into revenue machines.",
+      "headline_1": "We turn processes into",
+      "headline_2": "revenue machines.",
       "subheadline": "AI automation, integrations and CRM for businesses that want to grow with predictability.",
       "cta_primary": "Schedule a Free Call",
       "cta_diagnosis": "Schedule a free diagnosis",
