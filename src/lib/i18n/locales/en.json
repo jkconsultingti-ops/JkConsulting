@@ -19,7 +19,8 @@
       "cta_diagnosis": "Schedule a free diagnosis",
       "cta_secondary": "See how to automate my business",
       "flow_label": "How it works in practice",
-      "flow_nodes": ["Lead comes in", "AI qualifies", "CRM updates", "Follow-up"]
+      "flow_nodes": ["Lead comes in", "AI qualifies", "CRM updates", "Follow-up"],
+      "typewriter": ["Your CRM running on autopilot.", "Follow-up in 2 minutes.", "Never lose a lead again.", "Processes working 24/7."]
     },
     "tools": {
       "label": "Tools we master"
@@ -111,6 +112,19 @@
       "subtitle": "Less manual work. More sales on autopilot.",
       "cta": "I want to automate now",
       "fine_print": "No commitment · Response within 24h"
+    },
+    "roi": {
+      "label": "ROI Calculator",
+      "title": "How much does NOT automating cost you?",
+      "subtitle": "Adjust the values and see the real financial impact on your business.",
+      "hours_label": "Hours/week on manual tasks",
+      "people_label": "Team members",
+      "rate_label": "Hourly cost per person ($)",
+      "loss_title": "Monthly cost of manual work",
+      "savings_title": "Estimated savings with automation",
+      "annual_title": "Annual savings projection",
+      "disclaimer": "Estimate based on 68% reduction in manual hours — industry benchmark.",
+      "cta": "I want to save that now"
     }
   },
   "services": {
@@ -382,5 +396,11 @@
     "all": "All",
     "yes": "Yes",
     "no": "No"
+  },
+  "lgpd": {
+    "message": "We use essential cookies to improve your experience. By continuing, you agree to our",
+    "privacy_link": "Privacy Policy",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }

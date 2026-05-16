@@ -19,7 +19,8 @@
       "cta_diagnosis": "Agendar diagnóstico gratuito",
       "cta_secondary": "Ver como automatizar meu negócio",
       "flow_label": "Como funciona na prática",
-      "flow_nodes": ["Lead entra", "IA qualifica", "CRM atualiza", "Follow-up"]
+      "flow_nodes": ["Lead entra", "IA qualifica", "CRM atualiza", "Follow-up"],
+      "typewriter": ["Seu CRM rodando sozinho.", "Follow-up em 2 minutos.", "Leads nunca mais esquecidos.", "Processos que trabalham 24/7."]
     },
     "tools": {
       "label": "Ferramentas que dominamos"
@@ -111,6 +112,19 @@
       "subtitle": "Menos trabalho manual. Mais vendas no automático.",
       "cta": "Quero automatizar agora",
       "fine_print": "Sem compromisso · Resposta em até 24h"
+    },
+    "roi": {
+      "label": "Calculadora de ROI",
+      "title": "Quanto custa NÃO automatizar?",
+      "subtitle": "Ajuste os valores e veja o impacto financeiro real no seu negócio.",
+      "hours_label": "Horas/semana em tarefas manuais",
+      "people_label": "Pessoas na equipe",
+      "rate_label": "Custo hora por pessoa (R$)",
+      "loss_title": "Custo mensal do trabalho manual",
+      "savings_title": "Economia estimada com automação",
+      "annual_title": "Projeção anual de economia",
+      "disclaimer": "Estimativa baseada em 68% de redução de horas manuais — benchmark do setor.",
+      "cta": "Quero economizar isso agora"
     }
   },
   "services": {
@@ -382,5 +396,11 @@
     "all": "Todos",
     "yes": "Sim",
     "no": "Não"
+  },
+  "lgpd": {
+    "message": "Usamos cookies essenciais para melhorar sua experiência. Ao continuar, você concorda com nossa",
+    "privacy_link": "Política de Privacidade",
+    "accept": "Aceitar",
+    "decline": "Recusar"
   }
 }

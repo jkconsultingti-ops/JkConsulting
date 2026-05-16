@@ -5,6 +5,7 @@ import { I18nProvider } from "@/components/providers/I18nProvider";
 import { PageTransition } from "@/components/providers/PageTransition";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { LgpdBanner } from "@/components/ui/LgpdBanner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -40,6 +41,7 @@ export default function RootLayout({
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />
+          <LgpdBanner />
         </I18nProvider>
       </body>
     </html>

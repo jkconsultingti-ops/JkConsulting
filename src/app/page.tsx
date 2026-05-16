@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -85,8 +85,133 @@ const tools = [
   { name: "OpenClaw", src: "/tools/openclaw.svg" },
 ];
 
+function useTypewriter(phrases: string[], typingSpeed = 52, deletingSpeed = 30, pauseMs = 1900) {
+  const [displayed, setDisplayed] = useState("");
+  const [phraseIdx, setPhraseIdx] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    if (!phrases.length) return;
+    const target = phrases[phraseIdx];
+    if (!deleting) {
+      if (displayed.length < target.length) {
+        const id = setTimeout(() => setDisplayed(target.slice(0, displayed.length + 1)), typingSpeed);
+        return () => clearTimeout(id);
+      } else {
+        const id = setTimeout(() => setDeleting(true), pauseMs);
+        return () => clearTimeout(id);
+      }
+    } else {
+      if (displayed.length > 0) {
+        const id = setTimeout(() => setDisplayed((s) => s.slice(0, -1)), deletingSpeed);
+        return () => clearTimeout(id);
+      } else {
+        setDeleting(false);
+        setPhraseIdx((i) => (i + 1) % phrases.length);
+      }
+    }
+  }, [displayed, deleting, phraseIdx, phrases, typingSpeed, deletingSpeed, pauseMs]);
+
+  return displayed;
+}
+
+function RoiCalculator() {
+  const { t } = useTranslation();
+  const [hours, setHours] = useState(10);
+  const [people, setPeople] = useState(3);
+  const [rate, setRate] = useState(80);
+
+  const monthlyCost = Math.round(hours * 4.33 * people * rate);
+  const savings = Math.round(monthlyCost * 0.68);
+  const annual = savings * 12;
+
+  const fmt = (n: number) =>
+    n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
+
+  const sliders = [
+    { label: t("home.roi.hours_label"), value: hours, min: 1,  max: 40,  step: 1,  set: setHours,  prefix: "",    suffix: "h" },
+    { label: t("home.roi.people_label"), value: people, min: 1,  max: 50,  step: 1,  set: setPeople, prefix: "",    suffix: ""  },
+    { label: t("home.roi.rate_label"),  value: rate,   min: 20, max: 500, step: 10, set: setRate,   prefix: "R$", suffix: ""  },
+  ];
+
+  return (
+    <section className="py-24 px-4 bg-gray-900 border-t border-white/[0.05] relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1B5FFF08,transparent_65%)]" />
+      <div className="max-w-4xl mx-auto relative">
+        <motion.div className="text-center mb-12" {...fadeUp()}>
+          <SectionLabel>{t("home.roi.label")}</SectionLabel>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-2 tracking-tight">
+            {t("home.roi.title")}
+          </h2>
+          <p className="text-gray-500 mt-3 text-base max-w-lg mx-auto">
+            {t("home.roi.subtitle")}
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="p-px rounded-2xl"
+          style={{ background: "linear-gradient(135deg, rgba(27,95,255,0.35) 0%, rgba(27,95,255,0.07) 100%)" }}
+          {...fadeUp(0.1)}
+        >
+          <div className="bg-[#0D1020] rounded-[15px] p-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              {sliders.map(({ label, value, min, max, step, set, suffix, prefix }) => (
+                <div key={label}>
+                  <div className="flex justify-between mb-3">
+                    <span className="text-gray-400 text-xs font-medium leading-snug">{label}</span>
+                    <span className="text-white font-bold text-sm tabular-nums ml-2 flex-shrink-0">
+                      {prefix ? `${prefix} ${value}` : `${value}${suffix}`}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={min}
+                    max={max}
+                    step={step}
+                    value={value}
+                    onChange={(e) => set(Number(e.target.value))}
+                    className="roi-slider"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-white/[0.06] pt-8">
+              {[
+                { label: t("home.roi.loss_title"),    value: fmt(monthlyCost), color: "text-red-400",   bg: "bg-red-500/5",   border: "border-red-500/10"   },
+                { label: t("home.roi.savings_title"), value: fmt(savings),     color: "text-green-400", bg: "bg-green-500/5", border: "border-green-500/10" },
+                { label: t("home.roi.annual_title"),  value: fmt(annual),      color: "text-blue-400",  bg: "bg-blue-500/5",  border: "border-blue-500/10"  },
+              ].map(({ label, value, color, bg, border }) => (
+                <div key={label} className={`rounded-xl px-5 py-4 border ${bg} ${border}`}>
+                  <p className="text-gray-500 text-xs mb-1.5 leading-snug">{label}</p>
+                  <p className={`text-xl font-bold tabular-nums ${color}`}>{value}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-gray-700 text-xs mt-5 text-center">{t("home.roi.disclaimer")}</p>
+          </div>
+        </motion.div>
+
+        <motion.div className="text-center mt-8" {...fadeUp(0.2)}>
+          <Link
+            href="/contato"
+            className="btn-primary group inline-flex items-center gap-2 text-white font-semibold px-8 py-3.5 rounded-xl"
+          >
+            {t("home.roi.cta")}
+            <ArrowRight size={17} className="group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const { t } = useTranslation();
+
+  const typewriterPhrases: string[] = t("home.hero.typewriter", { returnObjects: true }) as string[];
+  const typewriterText = useTypewriter(typewriterPhrases);
 
   const problemItems: string[] = t("home.problem.items", { returnObjects: true }) as string[];
   const beforeItems: string[] = t("home.comparison.before", { returnObjects: true }) as string[];
@@ -131,10 +256,11 @@ export default function Home() {
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-400 mb-10 max-w-xl leading-relaxed"
+            className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl leading-relaxed min-h-[1.75rem]"
             {...fadeUp(0.14)}
           >
-            {t("home.hero.subheadline")}
+            <span>{typewriterText || " "}</span>
+            <span className="inline-block w-[2px] h-[1.1em] bg-blue-400 ml-1 align-[-0.1em] cursor-blink" />
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-3" {...fadeUp(0.2)}>
@@ -399,6 +525,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── ROI CALCULATOR ── */}
+      <RoiCalculator />
 
       {/* ── FERRAMENTAS ── */}
       <section className="py-16 px-4 bg-gray-50 border-t border-gray-100 overflow-hidden">
