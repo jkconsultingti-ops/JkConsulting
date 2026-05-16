@@ -88,7 +88,7 @@ export default function SobrePage() {
       </section>
 
       {/* ── FUNDADOR ── */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gray-50 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <motion.div className="text-center mb-12" {...fadeUp()}>
             <SectionLabel>{t("about.founder_title")}</SectionLabel>
@@ -115,7 +115,7 @@ export default function SobrePage() {
       </section>
 
       {/* ── VALORES ── */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <motion.div className="text-center mb-12" {...fadeUp()}>
             <SectionLabel>{t("about.values_title")}</SectionLabel>

@@ -124,7 +124,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
       </section>
 
       {/* ── PARA QUEM + RESULTADO ── */}
-      <section className="py-14 md:py-20 px-4 bg-white">
+      <section className="py-14 md:py-20 px-4 bg-white overflow-hidden">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
           <motion.div
             className="p-px rounded-2xl"

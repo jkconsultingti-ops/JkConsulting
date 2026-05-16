@@ -314,7 +314,7 @@ export default function Home() {
       </section>
 
       {/* ── PROBLEMA ── */}
-      <section className="py-16 md:py-24 px-4 bg-white">
+      <section className="py-16 md:py-24 px-4 bg-white overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <motion.div className="text-center mb-12" {...fadeUp()}>
             <SectionLabel>{t("home.problem.label")}</SectionLabel>
@@ -355,7 +355,7 @@ export default function Home() {
       </section>
 
       {/* ── ANTES vs DEPOIS ── */}
-      <section className="py-16 md:py-24 px-4 bg-white">
+      <section className="py-16 md:py-24 px-4 bg-white overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <motion.div className="text-center mb-12" {...fadeUp()}>
             <SectionLabel>{t("home.comparison.label")}</SectionLabel>
@@ -415,7 +415,7 @@ export default function Home() {
       </section>
 
       {/* ── SERVIÇOS ── */}
-      <section className="py-16 md:py-24 px-4 bg-gray-900">
+      <section className="py-16 md:py-24 px-4 bg-gray-900 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-14" {...fadeUp()}>
             <SectionLabel>{t("home.services_section.label")}</SectionLabel>
@@ -503,7 +503,7 @@ export default function Home() {
       </section>
 
       {/* ── COMO FUNCIONA ── */}
-      <section className="py-16 md:py-24 px-4 bg-white">
+      <section className="py-16 md:py-24 px-4 bg-white overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <motion.div className="text-center mb-16" {...fadeUp()}>
             <SectionLabel>{t("home.how.label")}</SectionLabel>

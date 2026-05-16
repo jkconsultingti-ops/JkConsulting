@@ -97,7 +97,7 @@ export default function ContatoPage() {
       </section>
 
       {/* ── FORMULÁRIO ── */}
-      <section className="py-20 px-4 bg-gray-900 border-t border-white/[0.05]">
+      <section className="py-20 px-4 bg-gray-900 border-t border-white/[0.05] overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
