@@ -224,7 +224,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative bg-gray-900 text-white pt-28 pb-24 px-4 overflow-hidden">
+      <section className="relative bg-gray-900 text-white pt-24 md:pt-28 pb-16 md:pb-24 px-4 overflow-hidden">
         {/* Dot grid */}
         <div
           className="absolute inset-0 opacity-[0.06]"
@@ -245,7 +245,7 @@ export default function Home() {
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-7xl font-bold leading-[1.05] mb-7 max-w-3xl tracking-tight"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] mb-7 max-w-3xl tracking-tight"
             {...fadeUp(0.07)}
           >
             {t("home.hero.headline_1")}
@@ -293,11 +293,11 @@ export default function Home() {
       {/* ── MÉTRICAS ── */}
       <section className="bg-gray-900 border-t border-white/[0.06] py-14 px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 md:divide-x md:divide-white/[0.06]">
             {metrics.map(({ value, unit, desc }, i) => (
-              <motion.div key={desc} className="px-6 py-2 first:pl-0 last:pr-0" {...fadeUp(i * 0.1)}>
+              <motion.div key={desc} className="px-4 md:px-6 py-2 md:first:pl-0 md:last:pr-0" {...fadeUp(i * 0.1)}>
                 <div className="flex items-baseline gap-1.5 mb-1.5">
-                  <span className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-none tabular-nums">
+                  <span className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight leading-none tabular-nums">
                     {value}
                   </span>
                   <span className="text-blue-400 font-semibold text-sm">{unit}</span>
@@ -314,7 +314,7 @@ export default function Home() {
       </section>
 
       {/* ── PROBLEMA ── */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div className="text-center mb-12" {...fadeUp()}>
             <SectionLabel>{t("home.problem.label")}</SectionLabel>
@@ -338,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* ── SOLUÇÃO ── */}
-      <section className="py-24 px-4 bg-gray-50">
+      <section className="py-16 md:py-24 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div {...fadeUp()}>
             <SectionLabel>{t("home.solution.label")}</SectionLabel>
@@ -355,7 +355,7 @@ export default function Home() {
       </section>
 
       {/* ── ANTES vs DEPOIS ── */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div className="text-center mb-12" {...fadeUp()}>
             <SectionLabel>{t("home.comparison.label")}</SectionLabel>
@@ -415,7 +415,7 @@ export default function Home() {
       </section>
 
       {/* ── SERVIÇOS ── */}
-      <section className="py-24 px-4 bg-gray-900">
+      <section className="py-16 md:py-24 px-4 bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-14" {...fadeUp()}>
             <SectionLabel>{t("home.services_section.label")}</SectionLabel>
@@ -455,7 +455,7 @@ export default function Home() {
       </section>
 
       {/* ── OFERTA ── */}
-      <section className="py-24 px-4 bg-gray-900 border-t border-white/[0.05] relative overflow-hidden">
+      <section className="py-16 md:py-24 px-4 bg-gray-900 border-t border-white/[0.05] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#1B5FFF0C,transparent_65%)]" />
         <div className="max-w-3xl mx-auto relative">
           <motion.div className="text-center mb-10" {...fadeUp()}>
@@ -503,7 +503,7 @@ export default function Home() {
       </section>
 
       {/* ── COMO FUNCIONA ── */}
-      <section className="py-24 px-4 bg-white">
+      <section className="py-16 md:py-24 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div className="text-center mb-16" {...fadeUp()}>
             <SectionLabel>{t("home.how.label")}</SectionLabel>
@@ -558,7 +558,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA FINAL ── */}
-      <section className="py-28 px-4 bg-gray-900 text-white text-center relative overflow-hidden">
+      <section className="py-20 md:py-28 px-4 bg-gray-900 text-white text-center relative overflow-hidden">
         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[280px] h-[280px] bg-blue-900/20 rounded-full blur-[80px] pointer-events-none" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[280px] h-[280px] bg-blue-900/20 rounded-full blur-[80px] pointer-events-none" />

@@ -44,7 +44,7 @@ export default function ServicosPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative bg-gray-900 text-white pt-28 pb-24 px-4 overflow-hidden">
+      <section className="relative bg-gray-900 text-white pt-24 md:pt-28 pb-16 md:pb-24 px-4 overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{ backgroundImage: "radial-gradient(circle, #7BA4FF 1px, transparent 1px)", backgroundSize: "28px 28px" }}
@@ -58,7 +58,7 @@ export default function ServicosPage() {
             </div>
           </motion.div>
           <motion.h1
-            className="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-5"
+            className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-5"
             {...fadeUp(0.07)}
           >
             {t("services.title")}
@@ -73,7 +73,7 @@ export default function ServicosPage() {
       </section>
 
       {/* ── SERVIÇOS ── */}
-      <section className="py-24 px-4 bg-gray-900 border-t border-white/[0.05]">
+      <section className="py-16 md:py-24 px-4 bg-gray-900 border-t border-white/[0.05]">
         <div className="max-w-6xl mx-auto">
           <motion.div className="text-center mb-14" {...fadeUp()}>
             <SectionLabel>{t("home.services_section.label")}</SectionLabel>

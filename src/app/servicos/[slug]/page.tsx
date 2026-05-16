@@ -50,7 +50,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative bg-gray-900 text-white pt-28 pb-24 px-4 overflow-hidden">
+      <section className="relative bg-gray-900 text-white pt-24 md:pt-28 pb-16 md:pb-24 px-4 overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{ backgroundImage: "radial-gradient(circle, #7BA4FF 1px, transparent 1px)", backgroundSize: "28px 28px" }}
@@ -76,7 +76,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
           </motion.div>
 
           <motion.h1
-            className="text-4xl md:text-6xl font-bold leading-tight tracking-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight"
             {...fadeUp(0.1)}
           >
             {t(`services.list.${slug}.hero`)}
@@ -85,7 +85,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
       </section>
 
       {/* ── PROBLEMA ── */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-14 md:py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div {...fadeUp()}>
             <SectionLabel>{t("services.problem")}</SectionLabel>
@@ -97,7 +97,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
       </section>
 
       {/* ── O QUE ENTREGAMOS ── */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-14 md:py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <motion.div className="mb-8" {...fadeUp()}>
             <SectionLabel>{t("services.delivers")}</SectionLabel>
@@ -124,7 +124,7 @@ export default function ServicePage({ params }: { params: Promise<{ slug: string
       </section>
 
       {/* ── PARA QUEM + RESULTADO ── */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-14 md:py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
           <motion.div
             className="p-px rounded-2xl"

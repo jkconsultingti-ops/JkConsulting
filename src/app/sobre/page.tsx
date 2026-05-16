@@ -36,7 +36,7 @@ export default function SobrePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative bg-gray-900 text-white pt-28 pb-24 px-4 overflow-hidden">
+      <section className="relative bg-gray-900 text-white pt-24 md:pt-28 pb-16 md:pb-24 px-4 overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{ backgroundImage: "radial-gradient(circle, #7BA4FF 1px, transparent 1px)", backgroundSize: "28px 28px" }}
@@ -52,7 +52,7 @@ export default function SobrePage() {
             </div>
           </motion.div>
           <motion.h1
-            className="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-5"
+            className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-5"
             {...fadeUp(0.07)}
           >
             {t("about.title")}
