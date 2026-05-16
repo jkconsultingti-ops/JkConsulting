@@ -19,8 +19,16 @@
       "cta_diagnosis": "Agendar diagnóstico gratuito",
       "cta_secondary": "Ver como automatizar meu negócio",
       "flow_label": "Como funciona na prática",
-      "flow_nodes": ["Lead entra", "IA qualifica", "CRM atualiza", "Follow-up"],
-      "typewriter": ["Seu CRM rodando sozinho.", "Follow-up em 2 minutos.", "Leads nunca mais esquecidos.", "Processos que trabalham 24/7."]
+      "flow_nodes": ["Lead entra", "IA qualifica", "CRM atualiza", "Acompanhamento"],
+      "typewriter": ["Seu CRM rodando sozinho.", "Retorno em 2 minutos.", "Leads nunca mais esquecidos.", "Processos que trabalham 24/7."],
+      "dashboard": {
+        "events": [
+          { "label": "Lead qualificado detectado",     "detail": "Bruno Costa · CEO · score 91/100",                "time": "agora" },
+          { "label": "CRM atualizado automaticamente", "detail": "Pipeline → Proposta · responsável atribuído",     "time": "3s"    },
+          { "label": "WhatsApp enviado",               "detail": "Resposta personalizada com histórico do cliente", "time": "5s"    },
+          { "label": "Acompanhamento agendado",             "detail": "Amanhã às 10:00 · mensagem personalizada",       "time": "15min" }
+        ]
+      }
     },
     "tools": {
       "label": "Ferramentas que dominamos"
@@ -28,7 +36,7 @@
     "metrics": {
       "disclaimer": "Baseado em benchmarks do setor e média dos primeiros clientes",
       "items": [
-        { "value": "12h", "unit": "por semana", "desc": "economizadas com follow-up automático" },
+        { "value": "12h", "unit": "por semana", "desc": "economizadas com acompanhamento automático" },
         { "value": "3×", "unit": "mais rápido", "desc": "no tempo de resposta para leads" },
         { "value": "+40%", "unit": "conversão", "desc": "com pipeline e CRM estruturado" },
         { "value": "15", "unit": "dias", "desc": "para implementar e ver resultado" }
@@ -39,7 +47,7 @@
       "title": "Seu negócio ainda depende de processos manuais?",
       "items": [
         "Leads esquecidos sem nenhum acompanhamento",
-        "Follow-up que depende da memória do vendedor",
+        "Acompanhamento que depende da memória do vendedor",
         "Atendimento lento que perde clientes para o concorrente",
         "Oportunidades sendo perdidas por falta de processo",
         "Processos desorganizados que consomem tempo da equipe"
@@ -59,13 +67,13 @@
       "after_title": "Depois da JK Consulting",
       "before": [
         "Trabalho manual todo dia",
-        "Leads esquecidos sem follow-up",
+        "Leads esquecidos sem acompanhamento",
         "Respostas lentas que perdem clientes",
         "Pipeline desorganizado",
         "Perda de oportunidades por falta de processo"
       ],
       "after": [
-        "Follow-up automático com IA",
+        "Acompanhamento automático com IA",
         "Leads qualificados e nutridos sozinhos",
         "Respostas imediatas 24/7",
         "Pipeline rodando no automático",
@@ -76,7 +84,7 @@
       "label": "O que fazemos",
       "title": "Serviços que geram resultado",
       "items": [
-        { "title": "Automação com IA", "desc": "Fluxos que trabalham por você 24/7 — qualificação de leads, follow-up e atendimento no automático.", "cta": "Automatizar meu follow-up", "slug": "automacao" },
+        { "title": "Automação com IA", "desc": "Fluxos que trabalham por você 24/7 — qualificação de leads, acompanhamento e atendimento no automático.", "cta": "Automatizar meu acompanhamento", "slug": "automacao" },
         { "title": "Integrações (n8n, APIs, WhatsApp)", "desc": "Conectamos todas as ferramentas do seu negócio para que os dados fluam sem trabalho manual.", "cta": "Conectar minhas ferramentas", "slug": "integracoes" },
         { "title": "CRM (Salesforce e outros)", "desc": "Implementamos e otimizamos o CRM certo para o seu negócio, com pipeline rodando sozinho.", "cta": "Implementar meu CRM", "slug": "crm" },
         { "title": "Fluxos de vendas automatizados", "desc": "Criamos sequências de vendas que nutrem, convertem e fecham — sem depender da memória do vendedor.", "cta": "Estruturar minhas vendas", "slug": "vendas" }
@@ -84,13 +92,13 @@
     },
     "offer": {
       "label": "Oferta principal",
-      "title": "Automation Growth Setup",
+      "title": "Setup de Automação e Crescimento",
       "text_1": "Implementamos automações no seu negócio em até",
       "text_bold": "15 dias",
       "text_2": "para aumentar conversão e reduzir trabalho manual.",
       "items": [
         "Estruturação do pipeline de vendas",
-        "Automações essenciais de follow-up",
+        "Automações essenciais de acompanhamento",
         "Integrações entre as principais ferramentas",
         "Dashboard de acompanhamento de resultados"
       ],
@@ -143,7 +151,7 @@
         "hero": "Pare de fazer manualmente o que a IA pode fazer por você",
         "problem": "Sua equipe gasta horas em tarefas repetitivas: responder e-mails, lançar dados, copiar informações entre sistemas. Isso custa dinheiro e energia que deveriam estar em crescimento.",
         "delivers": [
-          "Respostas e follow-ups automáticos por e-mail",
+          "Respostas e acompanhamentos automáticos por e-mail",
           "Entrada de dados e processamento de documentos com IA",
           "Gatilhos de fluxo de trabalho entre ferramentas (CRM → fatura → notificação)",
           "Chatbots de IA para triagem de clientes ou atendimento de FAQs",
@@ -161,12 +169,12 @@
           "Seleção de plataforma de CRM (HubSpot, Zoho, Pipedrive e outros)",
           "Setup completo de CRM e migração de dados",
           "Pipelines personalizados para vendas, atendimento ou operações",
-          "Sequências automáticas de follow-up",
+          "Sequências automáticas de acompanhamento",
           "Dashboards de relatórios",
           "Treinamento e suporte à adoção pela equipe"
         ],
         "for_whom": "Para empresas que perderam leads por falta de acompanhamento ou que nunca tiveram um processo de vendas estruturado.",
-        "result": "Time de vendas organizado, follow-ups automáticos e visibilidade total do funil."
+        "result": "Time de vendas organizado, acompanhamentos automáticos e visibilidade total do funil."
       },
       "otimizacao-processos": {
         "name": "Otimização de Processos e Eficiência",

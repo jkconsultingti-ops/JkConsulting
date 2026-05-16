@@ -34,14 +34,13 @@ function SectionLabel({ children }: { children: ReactNode }) {
 }
 
 type EventStatus = "live" | "done" | "pending";
-const dashboardEvents: { status: EventStatus; icon: string; label: string; detail: string; time: string }[] = [
-  { status: "live",    icon: "●", label: "Lead qualificado detectado",       detail: "Bruno Costa · CEO · score 91/100",                   time: "agora" },
-  { status: "done",    icon: "✓", label: "CRM atualizado automaticamente",   detail: "Pipeline → Proposta · responsável atribuído",        time: "3s"    },
-  { status: "done",    icon: "✓", label: "WhatsApp enviado",                 detail: "Resposta personalizada com histórico do cliente",    time: "5s"    },
-  { status: "pending", icon: "○", label: "Follow-up agendado",               detail: "Amanhã às 10:00 · mensagem personalizada",          time: "15min" },
-];
 
-function LiveDashboard({ flowLabel }: { flowLabel: string }) {
+const EVENT_STATUSES: EventStatus[] = ["live", "done", "done", "pending"];
+const EVENT_ICONS = ["●", "✓", "✓", "○"];
+
+type DashboardEventRaw = { label: string; detail: string; time: string };
+
+function LiveDashboard({ flowLabel, events }: { flowLabel: string; events: DashboardEventRaw[] }) {
   return (
     <>
       <div className="border-b border-white/[0.07] px-5 py-3 flex items-center justify-between">
@@ -52,22 +51,26 @@ function LiveDashboard({ flowLabel }: { flowLabel: string }) {
         <span className="text-gray-700 text-[11px] font-mono">jk-automations.app</span>
       </div>
       <div className="px-5 py-5 space-y-4">
-        {dashboardEvents.map((ev, i) => (
-          <div key={i} className="flex items-start gap-3">
-            <span className={`text-[11px] mt-0.5 font-mono flex-shrink-0 ${ev.status === "live" ? "text-green-400" : ev.status === "done" ? "text-blue-400" : "text-gray-700"}`}>
-              {ev.icon}
-            </span>
-            <div className="flex-1 min-w-0">
-              <p className={`text-sm font-medium leading-snug ${ev.status === "pending" ? "text-gray-600" : "text-white"}`}>
-                {ev.label}
-              </p>
-              <p className="text-xs text-gray-600 mt-0.5 truncate">{ev.detail}</p>
+        {events.map((ev, i) => {
+          const status = EVENT_STATUSES[i];
+          const icon = EVENT_ICONS[i];
+          return (
+            <div key={i} className="flex items-start gap-3">
+              <span className={`text-[11px] mt-0.5 font-mono flex-shrink-0 ${status === "live" ? "text-green-400" : status === "done" ? "text-blue-400" : "text-gray-700"}`}>
+                {icon}
+              </span>
+              <div className="flex-1 min-w-0">
+                <p className={`text-sm font-medium leading-snug ${status === "pending" ? "text-gray-600" : "text-white"}`}>
+                  {ev.label}
+                </p>
+                <p className="text-xs text-gray-600 mt-0.5 truncate">{ev.detail}</p>
+              </div>
+              <span className={`text-[11px] flex-shrink-0 font-mono tabular-nums ${status === "live" ? "text-green-400" : "text-gray-700"}`}>
+                {ev.time}
+              </span>
             </div>
-            <span className={`text-[11px] flex-shrink-0 font-mono tabular-nums ${ev.status === "live" ? "text-green-400" : "text-gray-700"}`}>
-              {ev.time}
-            </span>
-          </div>
-        ))}
+          );
+        })}
         <div className="flex items-center gap-2 pt-1">
           <span className="text-green-500 text-[11px] font-mono">▸</span>
           <span className="w-1.5 h-3.5 bg-green-500/50 rounded-sm cursor-blink" />
@@ -212,6 +215,7 @@ export default function Home() {
 
   const typewriterPhrases: string[] = t("home.hero.typewriter", { returnObjects: true }) as string[];
   const typewriterText = useTypewriter(typewriterPhrases);
+  const dashboardEvents = t("home.hero.dashboard.events", { returnObjects: true }) as DashboardEventRaw[];
 
   const problemItems: string[] = t("home.problem.items", { returnObjects: true }) as string[];
   const beforeItems: string[] = t("home.comparison.before", { returnObjects: true }) as string[];
@@ -285,7 +289,7 @@ export default function Home() {
             style={{ background: "rgba(13,16,32,0.7)", backdropFilter: "blur(20px)" }}
             {...fadeUp(0.28)}
           >
-            <LiveDashboard flowLabel={t("home.hero.flow_label")} />
+            <LiveDashboard flowLabel={t("home.hero.flow_label")} events={dashboardEvents} />
           </motion.div>
         </div>
       </section>

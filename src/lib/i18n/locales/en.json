@@ -20,7 +20,15 @@
       "cta_secondary": "See how to automate my business",
       "flow_label": "How it works in practice",
       "flow_nodes": ["Lead comes in", "AI qualifies", "CRM updates", "Follow-up"],
-      "typewriter": ["Your CRM running on autopilot.", "Follow-up in 2 minutes.", "Never lose a lead again.", "Processes working 24/7."]
+      "typewriter": ["Your CRM running on autopilot.", "Follow-up in 2 minutes.", "Never lose a lead again.", "Processes working 24/7."],
+      "dashboard": {
+        "events": [
+          { "label": "Qualified lead detected",    "detail": "James Carter · CEO · score 91/100",        "time": "now"   },
+          { "label": "CRM updated automatically", "detail": "Pipeline → Proposal · owner assigned",      "time": "3s"    },
+          { "label": "WhatsApp message sent",     "detail": "Personalized reply with client history",    "time": "5s"    },
+          { "label": "Follow-up scheduled",       "detail": "Tomorrow at 10:00 · personalized message", "time": "15min" }
+        ]
+      }
     },
     "tools": {
       "label": "Tools we master"
