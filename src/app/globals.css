@@ -19,6 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "rlig" 1, "calt" 1;
   overflow-x: hidden;
+  touch-action: pan-y;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -105,6 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   cursor: pointer;
   width: 100%;
+  touch-action: none;
 }
 .roi-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
