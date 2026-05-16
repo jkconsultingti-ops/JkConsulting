@@ -134,42 +134,44 @@ function parseMetricValue(v: string): { prefix: string; num: number; suffix: str
   return { prefix: match[1], num: parseFloat(match[2]), suffix: match[3] };
 }
 
-function easeOutExpo(t: number): number {
-  return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-}
-
 function AnimatedCounter({ value, className }: { value: string; className?: string }) {
   const { prefix, num, suffix } = parseMetricValue(value);
-  const [count, setCount] = useState(0);
+  const [display, setDisplay] = useState(`${prefix}0${suffix}`);
   const ref = useRef<HTMLSpanElement>(null);
-  const startedRef = useRef(false);
+  const ran = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || ran.current) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !startedRef.current) {
-          startedRef.current = true;
-          const start = performance.now();
-          const duration = 1500;
-          const tick = (now: number) => {
-            const progress = Math.min((now - start) / duration, 1);
-            setCount(Math.round(easeOutExpo(progress) * num));
-            if (progress < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        }
+        if (!entry.isIntersecting || ran.current) return;
+        ran.current = true;
+        observer.disconnect();
+
+        const duration = 2000;
+        const startTime = performance.now();
+
+        const frame = (now: number) => {
+          const t = Math.min((now - startTime) / duration, 1);
+          // easeOutCubic — gradual rise, visível em todos os tamanhos de número
+          const eased = 1 - Math.pow(1 - t, 3);
+          setDisplay(`${prefix}${Math.round(eased * num)}${suffix}`);
+          if (t < 1) requestAnimationFrame(frame);
+        };
+        requestAnimationFrame(frame);
       },
-      { threshold: 0.5 }
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
+
     observer.observe(el);
     return () => observer.disconnect();
-  }, [num]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <span ref={ref} className={className}>
-      {prefix}{count}{suffix}
+      {display}
     </span>
   );
 }
