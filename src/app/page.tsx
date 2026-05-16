@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, type ReactNode } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -33,14 +33,43 @@ function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-type EventStatus = "live" | "done" | "pending";
-
-const EVENT_STATUSES: EventStatus[] = ["live", "done", "done", "pending"];
-const EVENT_ICONS = ["●", "✓", "✓", "○"];
-
 type DashboardEventRaw = { label: string; detail: string; time: string };
 
 function LiveDashboard({ flowLabel, events }: { flowLabel: string; events: DashboardEventRaw[] }) {
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [animating, setAnimating] = useState(true);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const total = events.length;
+    let count = 0;
+
+    const clear = () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+
+    const advance = () => {
+      count++;
+      setVisibleCount(count);
+      if (count < total) {
+        timerRef.current = setTimeout(advance, 800);
+      } else {
+        timerRef.current = setTimeout(() => {
+          setAnimating(false);
+          setVisibleCount(0);
+          count = 0;
+          timerRef.current = setTimeout(() => {
+            setAnimating(true);
+            timerRef.current = setTimeout(advance, 500);
+          }, 60);
+        }, 2200);
+      }
+    };
+
+    timerRef.current = setTimeout(advance, 500);
+    return clear;
+  }, [events.length]);
+
   return (
     <>
       <div className="border-b border-white/[0.07] px-5 py-3 flex items-center justify-between">
@@ -52,20 +81,31 @@ function LiveDashboard({ flowLabel, events }: { flowLabel: string; events: Dashb
       </div>
       <div className="px-5 py-5 space-y-4">
         {events.map((ev, i) => {
-          const status = EVENT_STATUSES[i];
-          const icon = EVENT_ICONS[i];
+          const isVisible = i < visibleCount;
+          const isCurrent = i === visibleCount - 1;
+          const isDone = i < visibleCount - 1;
+          const icon = isDone ? "✓" : isCurrent ? "●" : "○";
+          const iconColor = isDone ? "text-green-400" : isCurrent ? "text-blue-400" : "text-gray-700";
           return (
-            <div key={i} className="flex items-start gap-3">
-              <span className={`text-[11px] mt-0.5 font-mono flex-shrink-0 ${status === "live" ? "text-green-400" : status === "done" ? "text-blue-400" : "text-gray-700"}`}>
+            <div
+              key={i}
+              className="flex items-start gap-3"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateX(0)" : "translateX(-8px)",
+                transition: animating ? "opacity 0.3s ease, transform 0.3s ease" : "none",
+              }}
+            >
+              <span className={`text-[11px] mt-0.5 font-mono flex-shrink-0 ${iconColor}`}>
                 {icon}
               </span>
               <div className="flex-1 min-w-0">
-                <p className={`text-sm font-medium leading-snug ${status === "pending" ? "text-gray-600" : "text-white"}`}>
+                <p className={`text-sm font-medium leading-snug ${!isVisible ? "text-gray-600" : "text-white"}`}>
                   {ev.label}
                 </p>
                 <p className="text-xs text-gray-600 mt-0.5 truncate">{ev.detail}</p>
               </div>
-              <span className={`text-[11px] flex-shrink-0 font-mono tabular-nums ${status === "live" ? "text-green-400" : "text-gray-700"}`}>
+              <span className={`text-[11px] flex-shrink-0 font-mono tabular-nums ${isCurrent ? "text-green-400" : "text-gray-700"}`}>
                 {ev.time}
               </span>
             </div>
@@ -87,6 +127,52 @@ const tools = [
   { name: "WhatsApp Business", src: "/tools/whatsapp.svg" },
   { name: "OpenClaw", src: "/tools/openclaw.svg" },
 ];
+
+function parseMetricValue(v: string): { prefix: string; num: number; suffix: string } {
+  const match = v.match(/^([+]?)(\d+(?:\.\d+)?)(.*)/);
+  if (!match) return { prefix: "", num: 0, suffix: v };
+  return { prefix: match[1], num: parseFloat(match[2]), suffix: match[3] };
+}
+
+function easeOutExpo(t: number): number {
+  return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+}
+
+function AnimatedCounter({ value, className }: { value: string; className?: string }) {
+  const { prefix, num, suffix } = parseMetricValue(value);
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const startedRef = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !startedRef.current) {
+          startedRef.current = true;
+          const start = performance.now();
+          const duration = 1500;
+          const tick = (now: number) => {
+            const progress = Math.min((now - start) / duration, 1);
+            setCount(Math.round(easeOutExpo(progress) * num));
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [num]);
+
+  return (
+    <span ref={ref} className={className}>
+      {prefix}{count}{suffix}
+    </span>
+  );
+}
 
 function useTypewriter(phrases: string[], typingSpeed = 52, deletingSpeed = 30, pauseMs = 1900) {
   const [displayed, setDisplayed] = useState("");
@@ -300,9 +386,10 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 md:divide-x md:divide-white/[0.06]">
             {metrics.map(({ value, unit, desc }, i) => (
               <motion.div key={desc} className="px-4 md:px-6 py-2 md:first:pl-0 md:last:pr-0" {...fadeUp(i * 0.1)}>
-                <span className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight leading-none tabular-nums block">
-                  {value}
-                </span>
+                <AnimatedCounter
+                  value={value}
+                  className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight leading-none tabular-nums block"
+                />
                 <span className="text-blue-400 font-semibold text-xs uppercase tracking-wide block mb-1.5">
                   {unit}
                 </span>
