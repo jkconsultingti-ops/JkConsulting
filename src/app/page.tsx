@@ -300,12 +300,12 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:gap-y-0 md:divide-x md:divide-white/[0.06]">
             {metrics.map(({ value, unit, desc }, i) => (
               <motion.div key={desc} className="px-4 md:px-6 py-2 md:first:pl-0 md:last:pr-0" {...fadeUp(i * 0.1)}>
-                <div className="flex items-baseline gap-1.5 mb-1.5">
-                  <span className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight leading-none tabular-nums">
-                    {value}
-                  </span>
-                  <span className="text-blue-400 font-semibold text-sm">{unit}</span>
-                </div>
+                <span className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight leading-none tabular-nums block">
+                  {value}
+                </span>
+                <span className="text-blue-400 font-semibold text-xs uppercase tracking-wide block mb-1.5">
+                  {unit}
+                </span>
                 <p className="text-gray-500 text-sm leading-snug">{desc}</p>
               </motion.div>
             ))}
