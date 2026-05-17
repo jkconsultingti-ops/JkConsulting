@@ -522,7 +522,7 @@ export default function Home() {
               return (
                 <motion.div
                   key={title}
-                  className="p-px rounded-2xl group hover:-translate-y-0.5 transition-transform duration-200"
+                  className="p-px rounded-2xl group service-card-hover"
                   style={{ background: "linear-gradient(135deg, rgba(27,95,255,0.3) 0%, rgba(27,95,255,0.06) 100%)" }}
                   {...slideIn(i % 2 === 0 ? "left" : "right", i * 0.08)}
                 >
@@ -607,8 +607,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             <div className="hidden md:block absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
             {steps.map(({ title, desc }, i) => (
-              <motion.div key={title} className="relative text-center" {...fadeUp(i * 0.1)}>
-                <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-600/20">
+              <motion.div key={title} className="relative text-center step-card-hover" {...fadeUp(i * 0.1)}>
+                <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-blue-600/20 transition-shadow duration-250 group-hover:shadow-xl group-hover:shadow-blue-600/30">
                   <span className="text-white font-bold text-sm tracking-wide">{stepNumbers[i]}</span>
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2 text-sm">{title}</h3>

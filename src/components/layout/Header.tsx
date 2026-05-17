@@ -78,7 +78,7 @@ export function Header() {
                       "relative text-[13px] font-medium px-3 py-2 rounded-lg transition-colors duration-150",
                       isActive
                         ? "text-white bg-white/[0.08]"
-                        : "text-gray-400 hover:text-white hover:bg-white/[0.05]"
+                        : "text-gray-400 hover:text-white hover:bg-white/[0.05] nav-link-underline"
                     )}
                   >
                     {label}
